@@ -1,0 +1,433 @@
+@import url("./global.less");
+
+body{
+    background-color: #fbfbfb;
+    margin: 0px;
+    // position: relative;
+
+    header{
+        nav{
+            background: @color_white;
+            border-radius: 6px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: space-between;
+            padding: 39px 84px 39px 78px;
+
+            h3{
+                color: @color_dark_blue;
+                font: 500 26px/39px Poppins;
+            }
+
+            h5{
+                color: @color_dark_blue;
+                font: 300 16px/24px Poppins;
+
+                a{
+                    color: @color_blue;
+                    font: 600 16px/24px Poppins;
+                    margin-left: 16px;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    
+    section{
+        background: @color_white;
+        border-radius: 6px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+        margin: 50px 79px 50px 80px;
+        height: 1035px;
+        padding: 72px 71px 71px 68px;
+
+        #wall_header{
+            align-items: flex-start;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+
+            p{
+                color: @color_gray;
+                font: 400 16px/24px Poppins;
+                margin: 0px;
+
+                span{
+                    color: @color_blue;
+                    font: 600 16px/24px Poppins;
+                }
+            }
+
+            button{
+                background: @color_blue;
+                border-radius: 4px;
+                color: @color_white;
+                border-style: none;
+                font: 500 16px/24px Poppins;
+                height: 38px;
+                width: 190px;
+            }
+        }
+
+        #no_message{
+            margin-top: 126px;
+            text-align: center;
+
+            p{
+                color: @color_gray;
+                font: 400 16px/24px Poppins;
+            }
+        }
+
+        #message_inbox{
+            .message{
+                background-color: @color_white;
+                border: 1px solid #dce6ff;
+                border-radius: 6px;
+                margin: 0px 0px 20px 0px;
+                padding: 24px 30px 28px 25.32px;
+
+                #message_text{
+                    color: @color_dark_blue;
+                    font: 300 16px/24px Poppins;
+                    margin: 0px 0px 20px 0px;
+                }
+
+                ul{
+                    align-items: center;
+                    display: flex;
+                    margin: 0px;
+                    padding: 0px;
+
+                    li{
+                        align-items: center;
+                        display: flex;
+                        list-style: none;
+                        margin: 0px 27px 0px 0px;
+
+                        img{
+                            margin: 0px 5px 0px 0px;
+                        }
+
+                        .message_comment{
+                            color: @color_gray;
+                        }
+
+                        .message_edit{
+                            color: @color_blue;
+                        }
+
+                        .message_delete, .message_profile{
+                            color: @color_black;
+                            opacity: 0.6;
+
+                            span{
+                                font: 500 16px/24px Poppins;
+                            }
+                        }
+
+                        p{
+                            margin: 0px;
+                        }
+                    }
+                }
+
+                .edit_message_form{
+                    form{
+                        display: block;
+                        text-align: right;
+
+                        input{
+                            background-color: #f5f8ff;
+                            border: 1px solid #dce6ff;
+                            border-radius: 6px;
+                            padding: 16px 9px 26px 10px;
+                            margin: 0px 0px 20px 0px;
+                            display: flex;
+                            width: 100%;
+                            box-sizing: border-box;
+                            font: 300 16px/24px Poppins;
+                        }
+
+                        button{
+                            background: @color_blue;
+                            border-radius: 4px;
+                            color: @color_white;
+                            border-style: none;
+                            font: 500 16px/24px Poppins;
+                            width: 190px;
+                            margin: 0px;
+                            height: 38px;
+                            text-align: center;
+                        }
+                    }
+                }
+
+                .comment_form{
+                    background-color: @color_white;
+                    border: 1px solid #dce6ff;
+                    border-radius: 6px;
+                    margin-top: 26px;
+                    padding: 30px 31px 20px 24px;
+
+                    form{
+                        display: block;
+                        text-align: right;
+
+                        input{
+                            background-color: #f5f8ff;
+                            border: 1px solid #dce6ff;
+                            border-radius: 6px;
+                            padding: 16px 9px 26px 10px;
+                            margin-bottom: 20px;
+                            display: flex;
+                            width: 100%;
+                            font: 300 16px/24px Poppins;
+                            box-sizing: border-box;
+                        }
+
+                        button{
+                            background: @color_blue;
+                            border-radius: 4px;
+                            color: @color_white;
+                            border-style: none;
+                            font: 500 16px/24px Poppins;
+                            width: 190px;
+                            margin: 0px;
+                            height: 38px;
+                            text-align: center;
+                        }
+                    }
+                }
+
+                #comment_inbox{
+                    .comment{
+                        background-color: @color_white;
+                        border: 1px solid #dce6ff;
+                        border-radius: 6px;
+                        margin-top: 20px;
+                        padding: 24px 30px 25px 25px;
+        
+                        #comment_text{
+                            color: @color_dark_blue;
+                            font: 300 16px/24px Poppins;
+                            margin: 0px 0px 20px 0px;
+                        }
+        
+                        ul{
+                            align-items: center;
+                            display: flex;
+                            margin: 0px;
+                            padding: 0px;
+        
+                            li{
+                                align-items: center;
+                                display: flex;
+                                list-style: none;
+                                margin: 0px 27px 0px 0px;
+        
+                                img{
+                                    margin: 0px 5px 0px 0px;
+                                }
+        
+                                .comment_edit{
+                                    color: @color_blue;
+                                }
+        
+                                .comment_delete, .comment_profile{
+                                    color: @color_black;
+                                    opacity: 0.6;
+        
+                                    span{
+                                        font: 500 16px/24px Poppins;
+                                    }
+                                }
+
+                                p{
+                                    margin: 0px;
+                                }
+                            }
+                        }
+
+                        .edit_comment_form{
+                            form{
+                                display: block;
+                                text-align: right;
+        
+                                input{
+                                    background-color: #f5f8ff;
+                                    border: 1px solid #dce6ff;
+                                    border-radius: 6px;
+                                    padding: 16px 9px 26px 10px;
+                                    margin: 0px 0px 20px 0px;
+                                    display: flex;
+                                    width: 100%;
+                                    box-sizing: border-box;
+                                    font: 300 16px/24px Poppins;
+                                }
+
+                                div{
+                                    a{
+                                        color: rgba(0, 0, 0, 0.6);
+                                        font: 400 16px/24px Poppins;
+                                        margin-right: 29px;
+                                        text-decoration: none;
+                                    }
+                                }
+        
+                                button{
+                                    background: @color_blue;
+                                    border-radius: 4px;
+                                    color: @color_white;
+                                    border-style: none;
+                                    font: 500 16px/24px Poppins;
+                                    width: 190px;
+                                    margin: 0px;
+                                    height: 38px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #create_message_modal{
+        background-color: rgba(0, 0, 0, 0.4);
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0px;
+
+        .modal_dialog{
+            display: flex;
+            justify-content: center;
+
+            .modal_content{
+                width: 937px;
+                height: 423px;
+
+                .modal_body{
+                    background-color: @color_white;
+                    padding: 40px 46px 50px 56px;
+                    position: relative;
+                    text-align: right;
+                    border-radius: 6px;
+                    margin: 50px;
+
+                    img{
+                        position: absolute;
+                        right: 11.47px;
+                        top: 12px;
+                    }
+
+                    h3{
+                        color: @color_dark_blue;
+                        font: 500 26px/39px Poppins;
+                        text-align: center;
+                    }
+
+                    input{
+                        background-color: #f5f8ff;
+                        border: 1px solid #dce6ff;
+                        border-radius: 6px;
+                        padding: 16px 9px 128px 10px;
+                        margin: 0px 0px 20px 0px;
+                        display: flex;
+                        width: 100%;
+                        box-sizing: border-box;
+                        font: 300 16px/24px Poppins;
+                    }
+
+                    div{
+                        a{
+                            color: rgba(0, 0, 0, 0.6);
+                            font: 400 16px/24px Poppins;
+                            margin-right: 29px;
+                            text-decoration: none;
+                        }
+                    }
+
+                    button{
+                        background: @color_blue;
+                        border-radius: 4px;
+                        color: @color_white;
+                        border-style: none;
+                        font: 500 16px/24px Poppins;
+                        width: 190px;
+                        margin: 0px;
+                        height: 38px;
+                    }
+                }
+            }
+        }
+    }
+
+    #delete_message_modal, #delete_comment_modal{
+        background-color: rgba(0, 0, 0, 0.4);
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0px;
+
+        .modal_dialog{
+            display: flex;
+            justify-content: center;
+
+            .modal_content{
+                height: 307px;
+                width: 540px;
+
+                .modal_body{
+                    background-color: @color_white;
+                    padding: 46px 75px 60px 77px;
+                    position: relative;
+                    text-align: center;
+                    border-radius: 6px;
+                    margin: 50px auto 0px auto;
+
+                    img{
+                        position: absolute;
+                        right: 11.47px;
+                        top: 12px;
+                    }
+
+                    h3{
+                        color: @color_dark_blue;
+                        font: 500 26px/39px Poppins;
+                        margin: 0px 0px 40px 0px;
+                    }
+
+                    p{
+                        color: @color_dark_blue;
+                        font: 400 16px/24px Poppins;
+                        margin: 0px;
+                    }
+
+                    div{
+                        margin-top: 34px;
+
+                        a{
+                            color: rgba(0, 0, 0, 0.6);
+                            font: 400 16px/24px Poppins;
+                            margin-right: 75px;
+                            text-decoration: none;
+                        }
+                    }
+
+                    button{
+                        background: @color_blue;
+                        border-radius: 6px;
+                        color: @color_white;
+                        border-style: none;
+                        font: 500 16px/24px Poppins;
+                        width: 190px;
+                        margin: 0px;
+                        height: 38px;
+                    }
+                }
+            }
+        }
+    }
+}

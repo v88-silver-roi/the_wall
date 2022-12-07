@@ -1,0 +1,82 @@
+@font-face {
+  font-family: Poppins;
+  src: url("../fonts/Poppins-Regular.ttf");
+}
+* {
+  font-family: Poppins;
+}
+.hidden {
+  display: none !important;
+}
+.input_error {
+  background-color: rgba(225, 85, 76, 0.08) !important;
+}
+.font_color_blue {
+  color: #2c6bff !important;
+}
+body {
+  margin: 0px;
+  display: flex;
+  justify-content: flex-start;
+}
+body section {
+  background-color: #fbfbfb;
+  padding: 117px 204px 117px 203px;
+}
+body section div {
+  background: #ffffff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 6px;
+  padding: 31px 40px 35px 40px;
+}
+body section div h3 {
+  color: #2c6bff;
+  font: 600 22px/33px Poppins;
+}
+body section div h1 {
+  color: #152c61;
+  font: 600 40px/60px Poppins;
+}
+body section div form label {
+  color: #152c61;
+  font: 300 16px/24px Poppins;
+}
+body section div form input {
+  background: rgba(44, 107, 255, 0.08);
+  border-radius: 4px;
+  border-style: none;
+  height: 55px;
+  width: 370px;
+  margin-bottom: 28px;
+}
+body section div form button {
+  background: #2c6bff;
+  border-radius: 4px;
+  color: #ffffff;
+  border-style: none;
+  font: 600 16px/24px Poppins;
+  padding: 15px 46px 15px 45px;
+  margin: 40px auto 35px auto;
+  display: flex;
+}
+body section div form p {
+  color: #152c61;
+  font: 400 16px/24px Poppins;
+  text-align: center;
+}
+body section div form p a {
+  color: #2c6bff;
+  text-decoration: none;
+}
+body section div p {
+  color: rgba(0, 0, 0, 0.2);
+  font: 400 16px/22px Poppins;
+  text-align: center;
+}
+body section div p a {
+  color: #2c6bff;
+  text-decoration: none;
+}
+body div {
+  background-color: rgba(44, 107, 255, 0.51);
+}

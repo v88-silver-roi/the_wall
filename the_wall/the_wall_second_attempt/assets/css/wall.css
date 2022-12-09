@@ -29,10 +29,12 @@ body header nav {
 body header nav h3 {
   color: #152c61;
   font: 500 26px/39px Poppins;
+  margin: 0px;
 }
 body header nav h5 {
   color: #152c61;
   font: 300 16px/24px Poppins;
+  margin: 0px;
 }
 body header nav h5 a {
   color: #2c6bff;
@@ -44,22 +46,24 @@ body section {
   background: #ffffff;
   border-radius: 6px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
-  margin: 50px 79px 50px 80px;
+  box-sizing: border-box;
   height: 1035px;
+  margin: 50px 80px 50px 79px;
+  overflow: hidden;
   padding: 72px 71px 71px 68px;
+  width: 1281px;
 }
 body section #wall_header {
   align-items: flex-start;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
 }
-body section #wall_header p {
+body section #wall_header h5 {
   color: #707070;
   font: 400 16px/24px Poppins;
   margin: 0px;
 }
-body section #wall_header p span {
+body section #wall_header h5 span {
   color: #2c6bff;
   font: 600 16px/24px Poppins;
 }
@@ -82,10 +86,12 @@ body section #no_message p {
 }
 body section #message_inbox .message {
   background-color: #ffffff;
-  border: 1px solid #dce6ff;
   border-radius: 6px;
+  border: 1px solid #dce6ff;
+  box-sizing: border-box;
   margin: 0px 0px 20px 0px;
-  padding: 24px 30px 28px 25.32px;
+  padding: 24px 30px 28px 26.32px;
+  width: 1140px;
 }
 body section #message_inbox .message #message_text {
   color: #152c61;
@@ -131,25 +137,25 @@ body section #message_inbox .message .edit_message_form form {
 }
 body section #message_inbox .message .edit_message_form form input {
   background-color: #f5f8ff;
-  border: 1px solid #dce6ff;
   border-radius: 6px;
-  padding: 16px 9px 26px 10px;
-  margin: 0px 0px 20px 0px;
-  display: flex;
-  width: 100%;
+  border: 1px solid #dce6ff;
   box-sizing: border-box;
+  display: flex;
   font: 300 16px/24px Poppins;
+  margin: 0px 0px 20px 0px;
+  padding: 16px 9px 26px 10px;
+  width: 100%;
 }
 body section #message_inbox .message .edit_message_form form button {
   background: #2c6bff;
   border-radius: 4px;
-  color: #ffffff;
   border-style: none;
+  color: #ffffff;
   font: 500 16px/24px Poppins;
-  width: 190px;
-  margin: 0px;
   height: 38px;
+  margin: 0px;
   text-align: center;
+  width: 190px;
 }
 body section #message_inbox .message .comment_form {
   background-color: #ffffff;
@@ -164,25 +170,25 @@ body section #message_inbox .message .comment_form form {
 }
 body section #message_inbox .message .comment_form form input {
   background-color: #f5f8ff;
-  border: 1px solid #dce6ff;
   border-radius: 6px;
-  padding: 16px 9px 26px 10px;
-  margin-bottom: 20px;
-  display: flex;
-  width: 100%;
-  font: 300 16px/24px Poppins;
+  border: 1px solid #dce6ff;
   box-sizing: border-box;
+  display: flex;
+  font: 300 16px/24px Poppins;
+  margin-bottom: 20px;
+  padding: 16px 9px 26px 10px;
+  width: 100%;
 }
 body section #message_inbox .message .comment_form form button {
   background: #2c6bff;
   border-radius: 4px;
-  color: #ffffff;
   border-style: none;
+  color: #ffffff;
   font: 500 16px/24px Poppins;
-  width: 190px;
-  margin: 0px;
   height: 38px;
+  margin: 0px;
   text-align: center;
+  width: 190px;
 }
 body section #message_inbox .message #comment_inbox .comment {
   background-color: #ffffff;
@@ -232,14 +238,14 @@ body section #message_inbox .message #comment_inbox .comment .edit_comment_form 
 }
 body section #message_inbox .message #comment_inbox .comment .edit_comment_form form input {
   background-color: #f5f8ff;
-  border: 1px solid #dce6ff;
   border-radius: 6px;
-  padding: 16px 9px 26px 10px;
-  margin: 0px 0px 20px 0px;
-  display: flex;
-  width: 100%;
+  border: 1px solid #dce6ff;
   box-sizing: border-box;
+  display: flex;
   font: 300 16px/24px Poppins;
+  margin: 0px 0px 20px 0px;
+  padding: 16px 9px 26px 10px;
+  width: 100%;
 }
 body section #message_inbox .message #comment_inbox .comment .edit_comment_form form div a {
   color: rgba(0, 0, 0, 0.6);
@@ -250,35 +256,35 @@ body section #message_inbox .message #comment_inbox .comment .edit_comment_form 
 body section #message_inbox .message #comment_inbox .comment .edit_comment_form form button {
   background: #2c6bff;
   border-radius: 4px;
-  color: #ffffff;
   border-style: none;
+  color: #ffffff;
   font: 500 16px/24px Poppins;
-  width: 190px;
-  margin: 0px;
   height: 38px;
+  margin: 0px;
+  width: 190px;
+}
+body section #message_inbox .message:first-child {
+  margin-top: 30px !important;
 }
 body #create_message_modal {
   background-color: rgba(0, 0, 0, 0.4);
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0px;
-}
-body #create_message_modal .modal_dialog {
   display: flex;
+  height: 100%;
   justify-content: center;
-}
-body #create_message_modal .modal_dialog .modal_content {
-  width: 937px;
-  height: 423px;
+  position: fixed;
+  top: 0px;
+  width: 100%;
 }
 body #create_message_modal .modal_dialog .modal_content .modal_body {
   background-color: #ffffff;
+  border-radius: 6px;
+  box-sizing: border-box;
+  height: 423px;
+  margin-top: 50px;
   padding: 40px 46px 50px 56px;
   position: relative;
   text-align: right;
-  border-radius: 6px;
-  margin: 50px;
+  width: 937px;
 }
 body #create_message_modal .modal_dialog .modal_content .modal_body img {
   position: absolute;
@@ -288,18 +294,20 @@ body #create_message_modal .modal_dialog .modal_content .modal_body img {
 body #create_message_modal .modal_dialog .modal_content .modal_body h3 {
   color: #152c61;
   font: 500 26px/39px Poppins;
+  margin: 0px 0px 40px 0px;
   text-align: center;
 }
 body #create_message_modal .modal_dialog .modal_content .modal_body input {
   background-color: #f5f8ff;
-  border: 1px solid #dce6ff;
   border-radius: 6px;
-  padding: 16px 9px 128px 10px;
-  margin: 0px 0px 20px 0px;
-  display: flex;
-  width: 100%;
+  border: 1px solid #dce6ff;
   box-sizing: border-box;
+  display: flex;
   font: 300 16px/24px Poppins;
+  height: 185px;
+  margin: 0px 0px 31px 0px;
+  padding: 8px 7.37px 128px 13.93px;
+  width: 835px;
 }
 body #create_message_modal .modal_dialog .modal_content .modal_body div a {
   color: rgba(0, 0, 0, 0.6);
@@ -310,25 +318,23 @@ body #create_message_modal .modal_dialog .modal_content .modal_body div a {
 body #create_message_modal .modal_dialog .modal_content .modal_body button {
   background: #2c6bff;
   border-radius: 4px;
-  color: #ffffff;
   border-style: none;
+  color: #ffffff;
   font: 500 16px/24px Poppins;
-  width: 190px;
-  margin: 0px;
   height: 38px;
+  margin: 0px;
+  width: 190px;
 }
 body #delete_message_modal,
 body #delete_comment_modal {
   background-color: rgba(0, 0, 0, 0.4);
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0px;
-}
-body #delete_message_modal .modal_dialog,
-body #delete_comment_modal .modal_dialog {
+  box-sizing: border-box;
   display: flex;
+  height: 100%;
   justify-content: center;
+  position: fixed;
+  top: 0px;
+  width: 100%;
 }
 body #delete_message_modal .modal_dialog .modal_content,
 body #delete_comment_modal .modal_dialog .modal_content {
@@ -338,11 +344,11 @@ body #delete_comment_modal .modal_dialog .modal_content {
 body #delete_message_modal .modal_dialog .modal_content .modal_body,
 body #delete_comment_modal .modal_dialog .modal_content .modal_body {
   background-color: #ffffff;
+  border-radius: 6px;
+  margin: 50px auto 0px auto;
   padding: 46px 75px 60px 77px;
   position: relative;
   text-align: center;
-  border-radius: 6px;
-  margin: 50px auto 0px auto;
 }
 body #delete_message_modal .modal_dialog .modal_content .modal_body img,
 body #delete_comment_modal .modal_dialog .modal_content .modal_body img {
@@ -377,10 +383,10 @@ body #delete_message_modal .modal_dialog .modal_content .modal_body button,
 body #delete_comment_modal .modal_dialog .modal_content .modal_body button {
   background: #2c6bff;
   border-radius: 6px;
-  color: #ffffff;
   border-style: none;
+  color: #ffffff;
   font: 500 16px/24px Poppins;
-  width: 190px;
-  margin: 0px;
   height: 38px;
+  margin: 0px;
+  width: 190px;
 }

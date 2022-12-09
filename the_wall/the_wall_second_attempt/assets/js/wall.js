@@ -5,7 +5,7 @@ const cancel_create_message_modal = document.getElementById("cancel_create_messa
 const post_message = document.getElementById("post_message");
 const no_message = document.getElementById("no_message");
 const message_inbox = document.getElementById("message_inbox");
-const wall_header_message_length = document.getElementById("wall_header").querySelector("p span");
+const wall_header_message_length = document.getElementById("wall_header").querySelector("h5 span");
 const delete_message_modal = document.getElementById("delete_message_modal");
 const message_length = document.getElementsByClassName("message").length;
 const delete_comment_modal = document.getElementById("delete_comment_modal");
@@ -163,5 +163,5 @@ post_message.addEventListener("click", (event) => {
 
 function CountMessageLength(){
     const message_length = document.getElementsByClassName("message").length;
-    // wall_header_message_length.innerHTML = message_length-1;
+    wall_header_message_length.innerHTML = message_length-1;
 }

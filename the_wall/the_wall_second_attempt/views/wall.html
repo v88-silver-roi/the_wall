@@ -20,7 +20,7 @@
     </header>
     <section>
         <div id="wall_header">
-            <p><span>0</span> messages arranged by latest posted</p>
+            <h5><span>0</span> message/s arranged by latest posted</h5>
             <button type="button" id="create_message_button">Create Message</button>
         </div>
         <div id="no_message">
@@ -28,7 +28,6 @@
             <p>No posted Message Yet.</p>
         </div>
         <div id="message_inbox">
-            
         </div>
     </section>
 
@@ -55,7 +54,7 @@
         <div class="modal_dialog">
             <div class="modal_content">
                 <div class="modal_body">
-                    <img src="../assets/images/cancel.png" alt="close icon" id="cancel_create_message">
+                    <img src="../assets/images/cancel.png" alt="close icon" id="cancel_delete_message">
                     <h3>Confirm Delete Message</h3>
                     <input type="hidden" class="message_id">
                     <p>Are you sure you want to remove this message?</p>
@@ -73,7 +72,7 @@
         <div class="modal_dialog">
             <div class="modal_content">
                 <div class="modal_body">
-                    <img src="../assets/images/cancel.png" alt="close icon" id="cancel_create_message">
+                    <img src="../assets/images/cancel.png" alt="close icon" id="cancel_delete_comment">
                     <h3>Confirm Delete Comment</h3>
                     <input type="hidden" class="comment_id">
                     <p>Are you sure you want to remove this comment?</p>
@@ -120,7 +119,7 @@
                     <button type="submit" class="post_comment">Post Comment</button>
                 </form> 
             </div>
-            <div id="comment_inbox">
+            <div id="comment_inbox hidden">
                 
             </div>
         </div>

@@ -1,13 +1,16 @@
 @import url("./global.less");
 
 body{
-    margin: 0px;
+    background-color: rgba(44, 107, 255, 0.51);
     display: flex;
     justify-content: flex-start;
+    margin: 0px;
 
     section{
         background-color: #fbfbfb;
+        height: 100vh;
         padding: 117px 204px 204px 203px;
+        z-index: 0;
 
         .form{
             background: @color_white;
@@ -18,11 +21,13 @@ body{
             h3{
                 color: @color_blue;
                 font: 600 22px/33px Poppins;
+                margin: 0px 0px 39px 0px;
             }
 
             h1{
                 color: @color_dark_blue;
                 font: 600 40px/60px Poppins;
+                margin: 0px 0px 18px 0px;
             }
 
             form{
@@ -30,14 +35,39 @@ body{
                 label{
                     color: @color_dark_blue;
                     font: 300 16px/24px Poppins;
+                    margin-bottom: 7px;
                 }
 
                 input{
                     background: rgba(44, 107, 255, 0.08);
                     border-radius: 4px;
                     border-style: none;
-                    width: 370px;
+                    box-sizing: border-box;
+                    color: @color_dark_blue;
+                    font: 400 14px/21px Poppins;
+                    margin: 0px;
                     padding: 17px 10px;
+                    width: 370px;
+                }
+
+                input[type="password"]{
+                    margin-bottom: 0px;
+                }
+
+                >div{
+                    font: 300 16px/24px Poppins;
+                }
+
+                .label_password{
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 28px;
+
+                    a{
+                        color: @color_black;
+                        opacity: 0.5;
+                        text-decoration: none;
+                    }
                 }
 
                 .error{
@@ -45,20 +75,6 @@ body{
                     font: 300 14px/31px Poppins;
                     margin: 0px;
                     text-align: left;
-                }
-
-                >div{
-                    display: flex;
-                    font: 300 16px/24px Poppins;
-                    justify-content: space-between;
-                    margin-top: 28px;
-                    margin-bottom: 7px;
-
-                    a{
-                        color: @color_black;
-                        opacity: 0.5;
-                        text-decoration: none;
-                    }
                 }
 
                 button{
@@ -76,6 +92,7 @@ body{
             p{
                 color: rgba(0, 0, 0, 0.2);
                 font: 400 16px/22px Poppins;
+                margin: 0px;
                 text-align: center;
 
                 a{
@@ -87,6 +104,11 @@ body{
     }
 
     .bg_image{
-        background-color: rgba(44, 107, 255, 0.51);
+
+            img{
+                position: absolute;
+                margin-left: -67px;
+                z-index: 1;
+            }
     }
 }

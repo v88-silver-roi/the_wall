@@ -6,17 +6,29 @@ const password_error = document.getElementById("password_error");
 
 login_form.addEventListener("submit", (event) => {
     event.preventDefault(event);
+    
+    email_error.classList.add("hidden");
+    password_error.classList.add("hidden");
+
     if(email.value == "test@gmail.com" && password.value == "12345"){
         window.location.href = "./wall.html";
     }
     else{
-        if(email.value != "test@gmail.com"){
+        if(email.value != "test@gmail.com" && password.value != "12345"){
             email.classList.add("input_error");
             email_error.classList.remove("hidden");
-        }
-        else{
             password.classList.add("input_error");
             password_error.classList.remove("hidden");
+        }
+        else{
+            if(email.value != "test@gmail.com" ){
+                email.classList.add("input_error");
+                email_error.classList.remove("hidden");
+            }
+            else{
+                password.classList.add("input_error");
+                password_error.classList.remove("hidden");
+            }
         }
     }
 });

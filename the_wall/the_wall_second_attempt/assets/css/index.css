@@ -9,19 +9,22 @@
   display: none !important;
 }
 .input_error {
-  background-color: rgba(225, 85, 76, 0.08) !important;
+  background: rgba(225, 85, 70, 0.08) !important;
 }
 .font_color_blue {
   color: #2c6bff !important;
 }
 body {
-  margin: 0px;
+  background-color: rgba(44, 107, 255, 0.51);
   display: flex;
   justify-content: flex-start;
+  margin: 0px;
 }
 body section {
   background-color: #fbfbfb;
+  height: 100vh;
   padding: 117px 204px 204px 203px;
+  z-index: 0;
 }
 body section .form {
   background: #ffffff;
@@ -32,39 +35,50 @@ body section .form {
 body section .form h3 {
   color: #2c6bff;
   font: 600 22px/33px Poppins;
+  margin: 0px 0px 39px 0px;
 }
 body section .form h1 {
   color: #152c61;
   font: 600 40px/60px Poppins;
+  margin: 0px 0px 18px 0px;
 }
 body section .form form label {
   color: #152c61;
   font: 300 16px/24px Poppins;
+  margin-bottom: 7px;
 }
 body section .form form input {
   background: rgba(44, 107, 255, 0.08);
   border-radius: 4px;
   border-style: none;
-  width: 370px;
+  box-sizing: border-box;
+  color: #152c61;
+  font: 400 14px/21px Poppins;
+  margin: 0px;
   padding: 17px 10px;
+  width: 370px;
+}
+body section .form form input[type="password"] {
+  margin-bottom: 0px;
+}
+body section .form form > div {
+  font: 300 16px/24px Poppins;
+}
+body section .form form .label_password {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 28px;
+}
+body section .form form .label_password a {
+  color: #000000;
+  opacity: 0.5;
+  text-decoration: none;
 }
 body section .form form .error {
   color: #e1554c;
   font: 300 14px/31px Poppins;
   margin: 0px;
   text-align: left;
-}
-body section .form form > div {
-  display: flex;
-  font: 300 16px/24px Poppins;
-  justify-content: space-between;
-  margin-top: 28px;
-  margin-bottom: 7px;
-}
-body section .form form > div a {
-  color: #000000;
-  opacity: 0.5;
-  text-decoration: none;
 }
 body section .form form button {
   background: #2c6bff;
@@ -79,12 +93,15 @@ body section .form form button {
 body section .form p {
   color: rgba(0, 0, 0, 0.2);
   font: 400 16px/22px Poppins;
+  margin: 0px;
   text-align: center;
 }
 body section .form p a {
   color: #2c6bff;
   text-decoration: none;
 }
-body .bg_image {
-  background-color: rgba(44, 107, 255, 0.51);
+body .bg_image img {
+  position: absolute;
+  margin-left: -67px;
+  z-index: 1;
 }

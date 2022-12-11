@@ -100,6 +100,7 @@ function postMessage(event){
         const current_message_id = delete_message_modal.querySelector(".message_id").value;
         document.getElementById(current_message_id).remove();
         delete_message_modal.classList.add("hidden");
+        console.log(message_length);
         countMessageLength();
     }
 
@@ -210,4 +211,7 @@ function closeModal(){
 function countMessageLength(){
     const message_length = document.getElementsByClassName("message").length;
     wall_header_message_length.innerHTML = message_length-1;
+    if((message_length-1) == 0){    
+        no_message.classList.remove("hidden");
+    }
 }

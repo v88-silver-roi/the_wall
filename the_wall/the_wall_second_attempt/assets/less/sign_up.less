@@ -16,8 +16,8 @@ body{
 
         div{
             background: @color_white;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
             border-radius: 6px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
             padding: 31px 40px 35px 40px;
             
             h3{
@@ -53,7 +53,7 @@ body{
                 }
 
                 input[id="confirm_password"]{
-                    margin-bottom: 0px;
+                    margin-bottom: 34px;
                 }
 
                 p{
@@ -68,15 +68,23 @@ body{
                     }
                 }
 
+                .error{
+                    color: @color_red;
+                    font: 300 14px/31px Poppins;
+                    margin: 0px;
+                    text-align: left;
+                }
+
                 button{
                     background: @color_blue;
                     border-radius: 4px;
-                    color: @color_white;
                     border-style: none;
-                    font: 600 16px/24px Poppins;
-                    padding: 15px 46px 15px 45px;
-                    margin: 34px auto 35px auto;
+                    color: @color_white;
+                    cursor: pointer;
                     display: flex;
+                    font: 600 16px/24px Poppins;
+                    margin: 34px auto 35px auto;
+                    padding: 15px 46px 15px 45px;
                 }
             }
 

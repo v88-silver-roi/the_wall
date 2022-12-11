@@ -14,3 +14,7 @@
 .font_color_blue {
   color: #2c6bff !important;
 }
+.disabled {
+  background: rgba(44, 107, 255, 0.5) !important;
+  pointer-events: none;
+}

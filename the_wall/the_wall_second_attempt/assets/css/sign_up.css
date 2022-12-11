@@ -14,6 +14,10 @@
 .font_color_blue {
   color: #2c6bff !important;
 }
+.disabled {
+  background: rgba(44, 107, 255, 0.5) !important;
+  pointer-events: none;
+}
 body {
   background-color: rgba(44, 107, 255, 0.51);
   display: flex;
@@ -30,8 +34,8 @@ body section {
 }
 body section div {
   background: #ffffff;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
   border-radius: 6px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
   padding: 31px 40px 35px 40px;
 }
 body section div h3 {
@@ -61,7 +65,7 @@ body section div form input {
   width: 370px;
 }
 body section div form input[id="confirm_password"] {
-  margin-bottom: 0px;
+  margin-bottom: 34px;
 }
 body section div form p {
   color: #152c61;
@@ -73,15 +77,22 @@ body section div form p a {
   color: #2c6bff;
   text-decoration: none;
 }
+body section div form .error {
+  color: #e1554c;
+  font: 300 14px/31px Poppins;
+  margin: 0px;
+  text-align: left;
+}
 body section div form button {
   background: #2c6bff;
   border-radius: 4px;
-  color: #ffffff;
   border-style: none;
-  font: 600 16px/24px Poppins;
-  padding: 15px 46px 15px 45px;
-  margin: 34px auto 35px auto;
+  color: #ffffff;
+  cursor: pointer;
   display: flex;
+  font: 600 16px/24px Poppins;
+  margin: 34px auto 35px auto;
+  padding: 15px 46px 15px 45px;
 }
 body section div p {
   color: rgba(0, 0, 0, 0.2);

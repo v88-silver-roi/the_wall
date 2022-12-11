@@ -14,11 +14,16 @@
 .font_color_blue {
   color: #2c6bff !important;
 }
+.disabled {
+  background: rgba(44, 107, 255, 0.5) !important;
+  pointer-events: none;
+}
 body {
   background-color: rgba(44, 107, 255, 0.51);
   display: flex;
   justify-content: flex-start;
-  margin: 0px;
+  margin: 0px auto;
+  max-width: 1440px;
 }
 body section {
   background-color: #fbfbfb;
@@ -28,8 +33,8 @@ body section {
 }
 body section .form {
   background: #ffffff;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
   border-radius: 6px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
   padding: 31px 40px 35px 40px;
 }
 body section .form h3 {
@@ -83,12 +88,13 @@ body section .form form .error {
 body section .form form button {
   background: #2c6bff;
   border-radius: 4px;
-  color: #ffffff;
   border-style: none;
-  padding: 15px 46px 15px 45px;
-  margin: 40px auto 35px auto;
+  color: #ffffff;
+  cursor: pointer;
   display: flex;
   font: 600 16px/24px Poppins;
+  margin: 40px auto 35px auto;
+  padding: 15px 46px 15px 45px;
 }
 body section .form p {
   color: rgba(0, 0, 0, 0.2);

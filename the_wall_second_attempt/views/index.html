@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <meta name="description" content="Login form of the wall assignment">
+    <meta name="author" content="Silver Roi Ramos">
+    <title>The Wall | Sign In Page</title>
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <script src="../assets/js/index.js" defer></script>
+</head>
+<body>
+    <section>
+        <div class="form">
+            <h3>The Wall</h3>
+            <h1>Log In</h1>
+            <form action="#" id="login_form">
+                <div>
+                    <label for="email">Email</label>
+                </div>
+                <input type="email" id="email" tabindex="1">
+                <p class="error hidden" id="email_error">Incorrect Email</p>
+                <div class="label_password">
+                    <label for="password">Password</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <input type="password" id="password" tabindex="2">
+                <p class="error hidden" id="password_error">Incorrect Password</p>
+                <button type="submit" id="sign_in_button" tabindex="3">SIGN IN</button>    
+            </form>
+            <p>I don't have an account ? <a href="sign_up.html">Sign up</a></p>
+        </div>
+    </section>
+    <div class="bg_image">
+        <img src="../assets/images/bg_man.png" alt="A man with papers">
+    </div>
+</body>
+</html>

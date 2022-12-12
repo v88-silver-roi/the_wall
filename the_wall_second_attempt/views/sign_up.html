@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <meta name="description" content="Register form of the wall assignment">
+    <meta name="author" content="Silver Roi Ramos">
+    <title>The Wall | Sign Up Page</title>
+    <link rel="stylesheet" href="../assets/css/sign_up.css">
+    <script src="../assets/js/sign_up.js" defer></script>
+</head>
+<body>
+    <section>
+        <div>
+            <h3>The Wall</h3>
+            <h1>Register</h1>
+            <form action="#" id="sign_up_form">
+                <label for="email">Email</label>
+                <input type="text" class="input" id="email" tabindex="1">
+                <p class="error hidden" id="email_error">Incorrect Email Format</p>
+                <label for="password">Password</label>
+                <input type="password" class="input" id="password" tabindex="2">
+                <p class="error hidden" id="password_error">Incorrect Password Format</p>
+                <label for="confirm_password">Confirm Password</label>
+                <input type="password" class="input" id="confirm_password" tabindex="3">
+                <p class="error hidden" id="confirm_password_error">Passwords not identical</p>
+                <p class="error hidden" id="empty_input_error">Fill up all information/s</p>
+                <p>By creating an account, you agree with The Wall's <a href="#">Privacy Policy</a> and <a href="#">Terms and Use</a>.</p>
+                <button type="submit" tabindex="4">SIGN UP</button>    
+            </form>
+            <p>Already have an account ? <a href="index.html">Sign In</a></p>
+        </div>
+    </section>
+    <div class="bg_image">
+        <img src="../assets/images/bg_man.png" alt="A man with papers">
+    </div>
+</body>
+</html>

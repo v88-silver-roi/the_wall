@@ -1,6 +1,18 @@
 @font-face {
   font-family: Poppins;
-  src: url("../fonts/Poppins-Regular.ttf");
+  src: url("../fonts/Poppins-Regular.otf");
+}
+@font-face {
+  font-family: Poppins-Light;
+  src: url("../fonts/Poppins-Light.otf");
+}
+@font-face {
+  font-family: Poppins-Medium;
+  src: url("../fonts/Poppins-Medium.otf");
+}
+@font-face {
+  font-family: Poppins-SemiBold;
+  src: url("../fonts/Poppins-SemiBold.otf");
 }
 * {
   font-family: Poppins;
@@ -39,17 +51,17 @@ body section .form {
 }
 body section .form h3 {
   color: #2c6bff;
-  font: 600 22px/33px Poppins;
+  font: 600 22px/33px Poppins-SemiBold;
   margin: 0px 0px 39px 0px;
 }
 body section .form h1 {
   color: #152c61;
-  font: 600 40px/60px Poppins;
+  font: 600 40px/60px Poppins-SemiBold;
   margin: 0px 0px 18px 0px;
 }
 body section .form form label {
   color: #152c61;
-  font: 300 16px/24px Poppins;
+  font: 300 16px/24px Poppins-Light;
   margin-bottom: 7px;
 }
 body section .form form input {
@@ -62,26 +74,27 @@ body section .form form input {
   margin: 0px;
   padding: 17px 10px;
   width: 370px;
+  -webkit-text-security: square;
 }
 body section .form form input[type="password"] {
   margin-bottom: 0px;
 }
 body section .form form > div {
-  font: 300 16px/24px Poppins;
+  font: 300 16px/24px Poppins-Light;
 }
-body section .form form .label_password {
+body section .form form #label_password {
   display: flex;
   justify-content: space-between;
   margin-top: 28px;
 }
-body section .form form .label_password a {
+body section .form form #label_password a {
   color: #000000;
   opacity: 0.5;
   text-decoration: none;
 }
 body section .form form .error {
   color: #e1554c;
-  font: 300 14px/31px Poppins;
+  font: 300 14px/31px Poppins-Light;
   margin: 0px;
   text-align: left;
 }
@@ -92,7 +105,7 @@ body section .form form button {
   color: #ffffff;
   cursor: pointer;
   display: flex;
-  font: 600 16px/24px Poppins;
+  font: 600 16px/24px Poppins-SemiBold;
   margin: 40px auto 35px auto;
   padding: 15px 46px 15px 45px;
 }
@@ -108,6 +121,6 @@ body section .form p a {
 }
 body .bg_image img {
   position: absolute;
-  margin-left: -67px;
+  margin: 192px 0px 0px -67px;
   z-index: 1;
 }

@@ -15,19 +15,11 @@ close_modal.forEach(close_modal => {
 
     function closeModal(event){
         event.target.closest(".modal").classList.add("hidden");
+        message_input.value = "";
     }
 });
 
-/** Open message modal */
-create_message_button.addEventListener("click", openMessageButton);
-
-/** Check if message input is empty */
-message_input.addEventListener("input", checkMessageInput);
-
-/** Post message */
-post_message.addEventListener("click", postMessage);
-
-function openMessageButton(){
+openMessageButton = () => {
     create_message_modal.classList.remove("hidden");
 }
 
@@ -42,7 +34,7 @@ function checkMessageInput(){
     }
 }
 
-function postMessage(event){
+postMessage = (event) => {
     event.preventDefault(event);
     const message_clone = document.getElementById("hidden_message_clone").querySelector(".message").cloneNode(true);
     const message_length = document.getElementsByClassName("message").length;
@@ -56,6 +48,7 @@ function postMessage(event){
     countMessageLength(); 
 
     const edit_message_button = message_clone.querySelector(".message_edit");
+    const cancel_message_button = message_clone.querySelector(".cancel_edit_message");
     const update_message_button = message_clone.querySelector(".message_update");
     const delete_message_button = message_clone.querySelector(".message_delete");
     const remove_message_button = delete_message_modal.querySelector("#remove_message");
@@ -65,8 +58,149 @@ function postMessage(event){
     const current_message_id = message_clone.closest(".message").getAttribute("id");
     const selected_message_id = document.getElementById(current_message_id);
 
+    openEditMessageBox = () => {
+        const message = selected_message_id.querySelector(".message_text").textContent;
+        console.log(message);
+        selected_message_id.querySelector(".message_text").classList.add("hidden");
+        selected_message_id.querySelector(".message_control_list").classList.add("hidden");
+        selected_message_id.querySelector(".edit_message_form").classList.remove("hidden");
+        selected_message_id.querySelector(".edit_message_input").value = message;
+    }
+
+    closeEditMessageBox = () => {
+        selected_message_id.querySelector(".message_text").classList.remove("hidden");
+        selected_message_id.querySelector(".message_control_list").classList.remove("hidden");
+        selected_message_id.querySelector(".edit_message_form").classList.add("hidden");
+    }
+
+    updateMessage = (event) => {
+        event.preventDefault(event);
+        const new_message = selected_message_id.querySelector(".edit_message_input").value;
+        selected_message_id.querySelector(".message_text").classList.remove("hidden");
+        selected_message_id.querySelector(".message_control_list").classList.remove("hidden");
+        selected_message_id.querySelector(".edit_message_form").classList.add("hidden");
+        selected_message_id.querySelector(".message_text").textContent = new_message;
+    }
+
+    openDeleteMessageModal = () => {
+        delete_message_modal.classList.remove("hidden");
+        delete_message_modal.querySelector("#delete_message_id").value = current_message_id;
+    }
+
+    deleteMessage = () => {
+        const current_message_id = delete_message_modal.querySelector("#delete_message_id").value;
+        document.getElementById("message_inbox").querySelector("#"+current_message_id).remove();
+        delete_message_modal.classList.add("hidden");
+        countMessageLength();
+    }
+
+    openCommentBox = () => {
+        selected_message_id.querySelector(".comment_form").classList.remove("hidden");
+        add_comment_button.classList.add("font_color_blue");
+        selected_message_id.querySelector("#comment_icon").setAttribute("src","../assets/images/messages-bubble-square-text-blue.png");
+    }
+
+    function checkCommentInput(){
+        const comment = comment_input.value.trim();
+        const post_comment = document.getElementById("post_comment");
+
+        if(comment == ""){
+            post_comment.classList.add("disabled");
+        }
+        else{
+            post_comment.classList.remove("disabled");
+        }
+    }
+
+    postComment = (event) => {
+        event.preventDefault(event);
+        const comment_input = message_clone.querySelector(".comment_input");
+        const comment_clone = document.getElementById("hidden_comment_clone").querySelector(".comment").cloneNode(true);
+        const comment_length = selected_message_id.getElementsByClassName("comment").length;
+        const comment_inbox = selected_message_id.querySelector("#comment_inbox");
+        const comment_id = "comment_"+comment_length;
+        comment_clone.setAttribute("id", comment_id);
+        comment_clone.querySelector(".comment_text").textContent = comment_input.value;
+        comment_inbox.prepend(comment_clone);
+        comment_input.value = "";
+        countCommentLength();
+
+        const edit_comment_button = message_clone.querySelector(".comment_edit");
+        const cancel_comment_button = message_clone.querySelector(".cancel_edit_comment");
+        const update_comment_button = message_clone.querySelector(".update_comment");
+        const delete_comment_button = message_clone.querySelector(".comment_delete");
+        const remove_comment_button = delete_comment_modal.querySelector("#remove_comment");
+        const current_comment_id = edit_comment_button.closest(".comment").getAttribute("id");
+        const selected_comment_id = document.getElementById(current_comment_id);
+        const comment_form = selected_message_id.querySelector(".comment_form");
+
+        openEditCommentBox = () => {
+            const comment = selected_comment_id.querySelector(".comment_text").textContent;
+            comment_form.classList.add("hidden");
+            selected_comment_id.querySelector(".edit_comment_form").classList.remove("hidden");
+            selected_comment_id.querySelector(".comment_text").classList.add("hidden");
+            selected_comment_id.querySelector(".comment_control_list").classList.add("hidden");
+            selected_comment_id.querySelector(".edit_comment_input").value = comment;
+        }
+
+        closeEditCommentBox = () => {
+            comment_form.classList.remove("hidden");
+            selected_comment_id.querySelector(".edit_comment_form").classList.add("hidden");
+            selected_comment_id.querySelector(".comment_text").classList.remove("hidden");
+            selected_comment_id.querySelector(".comment_control_list").classList.remove("hidden");
+        }
+
+        updateComment = (event) => {
+            event.preventDefault(event);
+            const new_comment = selected_comment_id.querySelector(".edit_comment_input").value;
+            comment_form.classList.remove("hidden");
+            selected_comment_id.querySelector(".edit_comment_form").classList.add("hidden");
+            selected_comment_id.querySelector(".comment_text").classList.remove("hidden");
+            selected_comment_id.querySelector(".comment_control_list").classList.remove("hidden");
+            selected_comment_id.querySelector(".comment_text").textContent = new_comment;
+        }
+        
+        openDeleteCommentBox = () => {
+            delete_comment_modal.classList.remove("hidden");
+            delete_comment_modal.querySelector("#delete_comment_id").value = current_comment_id;
+        }
+
+        deleteComment = () => {
+            const current_comment_id = delete_comment_modal.querySelector("#delete_comment_id").value;
+            const selected_comment_id = document.getElementById(current_comment_id);
+            selected_comment_id.remove();
+            delete_comment_modal.classList.add("hidden");
+            countCommentLength();
+        };
+
+        /** Open edit comment form */
+        edit_comment_button.addEventListener("click", openEditCommentBox);
+
+        /** Close edit comment form */
+        cancel_comment_button.addEventListener("click", closeEditCommentBox);
+
+        /** Save comment */
+        update_comment_button.addEventListener("click", updateComment);
+
+        /** Open delete comment modal */
+        delete_comment_button.addEventListener("click", openDeleteCommentBox);
+
+        /** Delete comment */
+        remove_comment_button.addEventListener("click", deleteComment);
+    }
+
+    /** Count comment/s */
+    function countCommentLength(){ 
+        const message_comment_length = selected_message_id.querySelector(".message_comment span");
+        comment_length =  selected_message_id.getElementsByClassName("comment").length;
+        message_comment_length.innerHTML = comment_length;
+    }
+
     /** Show edit message form */
     edit_message_button.addEventListener("click", openEditMessageBox);
+
+    /** Close edit message form */
+    cancel_message_button.addEventListener("click", closeEditMessageBox);
 
     /** Save message */
     update_message_button.addEventListener("click", updateMessage);
@@ -85,126 +219,6 @@ function postMessage(event){
 
     /** Post comment */
     post_comment_button.addEventListener("click", postComment);
-    
-    function openEditMessageBox(){
-        const message = selected_message_id.querySelector(".message_text").textContent;
-        selected_message_id.querySelector(".message_text").classList.add("hidden");
-        selected_message_id.querySelector(".message_control_list").classList.add("hidden");
-        selected_message_id.querySelector(".edit_message_form").classList.remove("hidden");
-        selected_message_id.querySelector(".edit_message_input").value = message;
-    }
-
-    function updateMessage(event){
-        event.preventDefault(event);
-        const new_message = selected_message_id.querySelector(".edit_message_input").value;
-        selected_message_id.querySelector(".message_text").classList.remove("hidden");
-        selected_message_id.querySelector(".message_control_list").classList.remove("hidden");
-        selected_message_id.querySelector(".edit_message_form").classList.add("hidden");
-        selected_message_id.querySelector(".message_text").textContent = new_message;
-    }
-
-    function openDeleteMessageModal(){
-        delete_message_modal.classList.remove("hidden");
-        delete_message_modal.querySelector("#delete_message_id").value = current_message_id;
-    }
-
-    function deleteMessage(){
-        const current_message_id = delete_message_modal.querySelector("#delete_message_id").value;
-        document.getElementById("message_inbox").querySelector("#"+current_message_id).remove();
-        delete_message_modal.classList.add("hidden");
-        countMessageLength();
-    }
-
-    function openCommentBox(){
-        selected_message_id.querySelector(".comment_form").classList.remove("hidden");
-        add_comment_button.classList.add("font_color_blue");
-        selected_message_id.querySelector("#comment_icon").setAttribute("src","../assets/images/messages-bubble-square-text-blue.png");
-    }
-
-    function checkCommentInput(){
-        const comment = comment_input.value.trim();
-        const post_comment = document.getElementById("post_comment");
-
-        if(comment == ""){
-            post_comment.classList.add("disabled");
-        }
-        else{
-            post_comment.classList.remove("disabled");
-        }
-    }
-
-    function postComment(event){
-        event.preventDefault(event);
-        const comment_input = message_clone.querySelector(".comment_input");
-        const comment_clone = document.getElementById("hidden_comment_clone").querySelector(".comment").cloneNode(true);
-        const comment_length = selected_message_id.getElementsByClassName("comment").length;
-        const comment_inbox = selected_message_id.querySelector("#comment_inbox");
-        const comment_id = "comment_"+comment_length;
-        comment_clone.setAttribute("id", comment_id);
-        comment_clone.querySelector(".comment_text").textContent = comment_input.value;
-        comment_inbox.prepend(comment_clone);
-        comment_input.value = "";
-        countCommentLength();
-
-        const edit_comment_button = message_clone.querySelector(".comment_edit");
-        const update_comment_button = message_clone.querySelector(".update_comment");
-        const delete_comment_button = message_clone.querySelector(".comment_delete");
-        const remove_comment_button = delete_comment_modal.querySelector("#remove_comment");
-        const current_comment_id = edit_comment_button.closest(".comment").getAttribute("id");
-        const selected_comment_id = document.getElementById(current_comment_id);
-        const comment_form = selected_message_id.querySelector(".comment_form");
-
-        /** Open edit comment form */
-        edit_comment_button.addEventListener("click", openEditCommentBox);
-
-        /** Save comment */
-        update_comment_button.addEventListener("click", updateComment);
-
-        /** Open delete comment modal */
-        delete_comment_button.addEventListener("click", openDeleteCommentBox);
-
-        /** Delete comment */
-        remove_comment_button.addEventListener("click", deleteComment);
-
-        function openEditCommentBox(){
-            const comment = selected_comment_id.querySelector(".comment_text").textContent;
-            comment_form.classList.add("hidden");
-            selected_comment_id.querySelector(".edit_comment_form").classList.remove("hidden");
-            selected_comment_id.querySelector(".comment_text").classList.add("hidden");
-            selected_comment_id.querySelector(".comment_control_list").classList.add("hidden");
-            selected_comment_id.querySelector(".edit_comment_input").value = comment;
-        }
-
-        function updateComment(event){
-            event.preventDefault(event);
-            const new_comment = selected_comment_id.querySelector(".edit_comment_input").value;
-            comment_form.classList.remove("hidden");
-            selected_comment_id.querySelector(".edit_comment_form").classList.add("hidden");
-            selected_comment_id.querySelector(".comment_text").classList.remove("hidden");
-            selected_comment_id.querySelector(".comment_control_list").classList.remove("hidden");
-            selected_comment_id.querySelector(".comment_text").textContent = new_comment;
-        }
-        
-        function openDeleteCommentBox(){
-            delete_comment_modal.classList.remove("hidden");
-            delete_comment_modal.querySelector("#delete_comment_id").value = current_comment_id;
-        }
-
-        function deleteComment(){
-            const current_comment_id = delete_comment_modal.querySelector("#delete_comment_id").value;
-            const selected_comment_id = document.getElementById(current_comment_id);
-            selected_comment_id.remove();
-            delete_comment_modal.classList.add("hidden");
-            countCommentLength();
-        };
-    }
-
-    /** Count comment/s */
-    function countCommentLength(){ 
-        const message_comment_length = selected_message_id.querySelector(".message_comment span");
-        comment_length =  selected_message_id.getElementsByClassName("comment").length;
-        message_comment_length.innerHTML = comment_length;
-    }
 }
 
 /** Count message/s */
@@ -215,3 +229,12 @@ function countMessageLength(){
         no_message.classList.remove("hidden");
     }
 }
+
+/** Open message modal */
+create_message_button.addEventListener("click", openMessageButton);
+
+/** Check if message input is empty */
+message_input.addEventListener("input", checkMessageInput);
+
+/** Post message */
+post_message.addEventListener("click", postMessage);

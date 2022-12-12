@@ -32,7 +32,7 @@ function submitSignUpForm(event){
 
                 /** Check if passwords are identical */
                 if (password.value == confirm_password.value){
-                    window.location.href = "./wall.html";   
+                    window.location.href = "./index.html";   
                 }
                 else{
                     confirm_password.classList.add("input_error");

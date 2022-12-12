@@ -21,13 +21,13 @@ body{
             
             h3{
                 color: @color_blue;
-                font: 600 22px/33px Poppins;
+                font: 600 22px/33px Poppins-SemiBold;
                 margin: 0px 0px 39px 0px;
             }
 
             h1{
                 color: @color_dark_blue;
-                font: 600 40px/60px Poppins;
+                font: 600 40px/60px Poppins-SemiBold;
                 margin: 0px 0px 18px 0px;
             }
 
@@ -35,7 +35,7 @@ body{
                 
                 label{
                     color: @color_dark_blue;
-                    font: 300 16px/24px Poppins;
+                    font: 300 16px/24px Poppins-Light;
                     margin-bottom: 7px;
                 }
 
@@ -49,6 +49,7 @@ body{
                     margin: 0px;
                     padding: 17px 10px;
                     width: 370px;
+                    -webkit-text-security: square;
                 }
 
                 input[type="password"]{
@@ -56,10 +57,10 @@ body{
                 }
 
                 >div{
-                    font: 300 16px/24px Poppins;
+                    font: 300 16px/24px Poppins-Light;
                 }
 
-                .label_password{
+                #label_password{
                     display: flex;
                     justify-content: space-between;
                     margin-top: 28px;
@@ -73,7 +74,7 @@ body{
 
                 .error{
                     color: @color_red;
-                    font: 300 14px/31px Poppins;
+                    font: 300 14px/31px Poppins-Light;
                     margin: 0px;
                     text-align: left;
                 }
@@ -83,9 +84,9 @@ body{
                     border-radius: 4px;
                     border-style: none;
                     color: @color_white;
-                    cursor:pointer;
+                    cursor: pointer;
                     display: flex;
-                    font: 600 16px/24px Poppins;
+                    font: 600 16px/24px Poppins-SemiBold;
                     margin: 40px auto 35px auto;
                     padding: 15px 46px 15px 45px;
                 }
@@ -106,10 +107,11 @@ body{
     }
 
     .bg_image{
+        // background-color: rgba(44, 107, 255, 0.51);
 
             img{
                 position: absolute;
-                margin-left: -67px;
+                margin: 192px 0px 0px -67px;
                 z-index: 1;
             }
     }

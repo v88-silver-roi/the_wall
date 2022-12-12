@@ -15,13 +15,13 @@ body{
 
             h3{
                 color: @color_dark_blue;
-                font: 500 26px/39px Poppins;
+                font: 500 26px/39px Poppins-Medium;
                 margin: 0px;
             }
 
             h5{
                 color: @color_dark_blue;
-                font: 300 16px/24px Poppins;
+                font: 300 16px/24px Poppins-Light;
                 margin: 0px;
 
                 a{
@@ -42,6 +42,7 @@ body{
         margin: 50px 80px 50px 79px;
         overflow: hidden;
         padding: 72px 71px 71px 68px;
+        height: 100vh;
 
         #wall_header{
             align-items: flex-start;
@@ -65,7 +66,7 @@ body{
                 border-style: none;
                 color: @color_white;
                 cursor: pointer;
-                font: 500 16px/24px Poppins;
+                font: 500 16px/24px Poppins-Medium;
                 height: 38px;
                 width: 190px;
             }
@@ -78,6 +79,7 @@ body{
             p{
                 color: @color_gray;
                 font: 400 16px/24px Poppins;
+                margin: 20px 0px 0px 0px;
             }
         }
 
@@ -93,9 +95,9 @@ body{
                 margin: 0px 0px 20px 0px;
                 padding: 24px 30px 28px 26.32px;
 
-                #message_text{
+                .message_text{
                     color: @color_dark_blue;
-                    font: 300 16px/24px Poppins;
+                    font: 300 16px/24px Poppins-Light;
                     margin: 0px 0px 20px 0px;
                 }
 
@@ -109,29 +111,39 @@ body{
                         align-items: center;
                         display: flex;
                         list-style: none;
-                        margin: 0px 27px 0px 0px;
+                        margin: 0px 0px 0px 0px;
 
                         img{
-                            margin: 0px 5px 0px 0px;
+                            margin: 0px;
                         }
 
                         .message_comment{
                             color: @color_gray;
                             cursor: pointer;
+                            margin: 0px 24.68px 0px 5px;
                         }
 
                         .message_edit{
                             color: @color_blue;
                             cursor: pointer;
+                            margin: 0px 28px 0px 4px;
                         }
 
-                        .message_delete, .message_profile{
+                        .message_delete{
                             color: @color_black;
                             cursor: pointer;
+                            margin: 0px 27.32px 0px 5px;
+                            opacity: 0.6;
+                        }
+
+                        .message_profile{
+                            color: @color_black;
+                            cursor: pointer;
+                            margin: 0px 0px 0px 8px;
                             opacity: 0.6;
 
                             span{
-                                font: 500 16px/24px Poppins;
+                                font: 500 16px/24px Poppins-Medium;
                             }
                         }
 
@@ -152,10 +164,17 @@ body{
                             border: 1px solid #dce6ff;
                             box-sizing: border-box;
                             display: flex;
-                            font: 300 16px/24px Poppins;
+                            font: 300 16px/24px Poppins-Light;
                             margin: 0px 0px 20px 0px;
                             padding: 16px 9px 26px 10px;
                             width: 100%;
+                        }
+
+                        a{
+                            color: rgba(0, 0, 0, 0.6);
+                            font: 400 16px/24px Poppins;
+                            margin-right: 30px;
+                            text-decoration: none;
                         }
 
                         button{
@@ -164,7 +183,7 @@ body{
                             border-style: none;
                             color: @color_white;
                             cursor: pointer;
-                            font: 500 16px/24px Poppins;
+                            font: 500 16px/24px Poppins-Medium;
                             height: 38px;
                             margin: 0px;
                             text-align: center;
@@ -190,7 +209,7 @@ body{
                             border: 1px solid #dce6ff;
                             box-sizing: border-box;
                             display: flex;
-                            font: 300 16px/24px Poppins;
+                            font: 300 16px/24px Poppins-Light;
                             margin-bottom: 20px;
                             padding: 16px 9px 26px 10px;
                             width: 100%;
@@ -202,7 +221,7 @@ body{
                             border-style: none;
                             color: @color_white;
                             cursor: pointer;
-                            font: 500 16px/24px Poppins;
+                            font: 500 16px/24px Poppins-Medium;
                             height: 38px;
                             margin: 0px;
                             text-align: center;
@@ -225,7 +244,7 @@ body{
         
                         #comment_text{
                             color: @color_dark_blue;
-                            font: 300 16px/24px Poppins;
+                            font: 300 16px/24px Poppins-Light;
                             margin: 0px 0px 20px 0px;
                         }
         
@@ -239,27 +258,35 @@ body{
                                 align-items: center;
                                 display: flex;
                                 list-style: none;
-                                margin: 0px 27px 0px 0px;
+                                margin: 0px;
         
                                 img{
-                                    margin: 0px 5px 0px 0px;
+                                    margin: 0px;
                                 }
         
                                 .comment_edit{
                                     color: @color_blue;
                                     cursor: pointer;
+                                    margin: 0px 28px 0px 5px;
                                 }
         
-                                .comment_delete, .comment_profile{
+                                .comment_delete{
                                     color: @color_black;
                                     cursor: pointer;
+                                    margin: 0px 28px 0px 5px;
+                                    opacity: 0.6;
+                                }
+
+                                .comment_profile{
+                                    color: @color_black;
+                                    cursor: pointer;
+                                    margin: 0px 0px 0px 8px;
                                     opacity: 0.6;
         
                                     span{
-                                        font: 500 16px/24px Poppins;
+                                        font: 500 16px/24px Poppins-Medium;
                                     }
                                 }
-
                                 p{
                                     margin: 0px;
                                 }
@@ -277,7 +304,7 @@ body{
                                     border: 1px solid #dce6ff;
                                     box-sizing: border-box;
                                     display: flex;
-                                    font: 300 16px/24px Poppins;
+                                    font: 300 16px/24px Poppins-Light;
                                     margin: 0px 0px 20px 0px;
                                     padding: 16px 9px 26px 10px;
                                     width: 100%;
@@ -298,7 +325,7 @@ body{
                                     border-style: none;
                                     color: @color_white;
                                     cursor: pointer;
-                                    font: 500 16px/24px Poppins;
+                                    font: 500 16px/24px Poppins-Medium;
                                     height: 38px;
                                     margin: 0px;
                                     width: 190px;
@@ -348,7 +375,7 @@ body{
 
                     h3{
                         color: @color_dark_blue;
-                        font: 500 26px/39px Poppins;
+                        font: 500 26px/39px Poppins-Medium;
                         margin: 0px 0px 40px 0px;
                         text-align: center;
                     }
@@ -360,20 +387,18 @@ body{
                         box-sizing: border-box;
                         box-sizing: border-box;
                         display: flex;
-                        font: 300 16px/24px Poppins;
+                        font: 300 16px/24px Poppins-Light;
                         height: 185px;
                         margin: 0px 0px 31px 0px;
                         padding: 8px 7.37px 128px 13.93px;
                         width: 835px;
                     }
 
-                    div{
-                        a{
-                            color: rgba(0, 0, 0, 0.6);
-                            font: 400 16px/24px Poppins;
-                            margin-right: 29px;
-                            text-decoration: none;
-                        }
+                    a{
+                        color: rgba(0, 0, 0, 0.6);
+                        font: 400 16px/24px Poppins;
+                        margin-right: 29px;
+                        text-decoration: none;
                     }
 
                     button{
@@ -382,7 +407,7 @@ body{
                         border-style: none;
                         color: @color_white;
                         cursor: pointer;
-                        font: 500 16px/24px Poppins;
+                        font: 500 16px/24px Poppins-Medium;
                         height: 38px;
                         margin: 0px;
                         width: 190px;
@@ -415,7 +440,7 @@ body{
                     margin: 50px auto 0px auto;
                     padding: 46px 75px 60px 77px;
                     position: relative;
-                    text-align: center;
+                    text-align: right;
 
                     img{
                         cursor: pointer;
@@ -426,37 +451,35 @@ body{
 
                     h3{
                         color: @color_dark_blue;
-                        font: 500 26px/39px Poppins;
+                        font: 500 26px/39px Poppins-Medium;
                         margin: 0px 0px 40px 0px;
+                        text-align: center;
                     }
 
                     p{
                         color: @color_dark_blue;
                         font: 400 16px/24px Poppins;
                         margin: 0px;
+                        text-align: center;
                     }
 
-                    div{
-                        margin-top: 34px;
-
-                        a{
-                            color: rgba(0, 0, 0, 0.6);
-                            font: 400 16px/24px Poppins;
-                            margin-right: 75px;
-                            text-decoration: none;
-                        }
+                    a{
+                        color: rgba(0, 0, 0, 0.6);
+                        font: 400 16px/24px Poppins;
+                        margin: 0px;
+                        text-decoration: none;
                     }
-
+                
                     button{
                         background: @color_blue;
                         border-radius: 6px;
                         border-style: none;
                         color: @color_white;
                         cursor: pointer;
-                        font: 500 16px/24px Poppins;
-                        height: 38px;
-                        margin: 0px;
-                        width: 190px;
+                        font: 500 16px/24px Poppins-Medium;
+                        height: 46px;
+                        margin: 34px 0px 0px 75px;
+                        width: 210px;
                     }
                 }
             }

@@ -4,7 +4,8 @@ body{
     background-color: rgba(44, 107, 255, 0.51);
     display: flex;
     justify-content: flex-start;
-    margin: 0px;
+    margin: 0px auto;
+    max-width: 1440px;
 
     section{
         background-color: #fbfbfb;
@@ -22,13 +23,13 @@ body{
             
             h3{
                 color: @color_blue;
-                font: 600 22px/33px Poppins;
+                font: 600 22px/33px Poppins-SemiBold;
                 margin: 0px 0px 39px 0px;
             }
 
             h1{
                 color: @color_dark_blue;
-                font: 600 40px/60px Poppins;
+                font: 600 40px/60px Poppins-SemiBold;
                 margin: 0px 0px 18px 0px;
             }
 
@@ -36,8 +37,14 @@ body{
                 
                 label{
                     color: @color_dark_blue;
-                    font: 300 16px/24px Poppins;
-                    margin-bottom: 7px;
+                    display: block;
+                    font: 300 16px/24px Poppins-Light;
+                    margin: 28px 0px 7px 0px;
+                }
+
+                label[for="email"]{
+                    display: inline-block;
+                    margin-top: 0px;
                 }
 
                 input{
@@ -47,19 +54,16 @@ body{
                     box-sizing: border-box;
                     color: @color_dark_blue;
                     font: 400 14px/21px Poppins;
-                    margin-bottom: 28px;
+                    margin-top: 7px;
                     padding: 17px 10px;
                     width: 370px;
                 }
 
-                input[id="confirm_password"]{
-                    margin-bottom: 34px;
-                }
-
                 p{
                     color: @color_dark_blue;
-                    font: 400 16px/24px Poppins;
-                    margin: 0px;
+                    display: inline-block;
+                    font: 300 16px/24px Poppins-Light;
+                    margin: 33px 0px 0px 0px;
                     text-align: center;
     
                     a{
@@ -70,7 +74,8 @@ body{
 
                 .error{
                     color: @color_red;
-                    font: 300 14px/31px Poppins;
+                    display: block;
+                    font: 300 14px/31px Poppins-Light;
                     margin: 0px;
                     text-align: left;
                 }
@@ -82,7 +87,7 @@ body{
                     color: @color_white;
                     cursor: pointer;
                     display: flex;
-                    font: 600 16px/24px Poppins;
+                    font: 600 16px/24px Poppins-SemiBold;
                     margin: 34px auto 35px auto;
                     padding: 15px 46px 15px 45px;
                 }
@@ -90,7 +95,6 @@ body{
 
             p{
                 color: rgba(0, 0, 0, 0.2);
-                margin: 0px;
                 text-align: center;
 
                 a{
@@ -105,7 +109,7 @@ body{
 
         img{
             position: absolute;
-            margin-left: -67px;
+            margin: 335.2px 0px 0px -67px;
             z-index: 1; 
         }
     }

@@ -1,6 +1,18 @@
 @font-face {
   font-family: Poppins;
-  src: url("../fonts/Poppins-Regular.ttf");
+  src: url("../fonts/Poppins-Regular.otf");
+}
+@font-face {
+  font-family: Poppins-Light;
+  src: url("../fonts/Poppins-Light.otf");
+}
+@font-face {
+  font-family: Poppins-Medium;
+  src: url("../fonts/Poppins-Medium.otf");
+}
+@font-face {
+  font-family: Poppins-SemiBold;
+  src: url("../fonts/Poppins-SemiBold.otf");
 }
 * {
   font-family: Poppins;
@@ -32,12 +44,12 @@ body header nav {
 }
 body header nav h3 {
   color: #152c61;
-  font: 500 26px/39px Poppins;
+  font: 500 26px/39px Poppins-Medium;
   margin: 0px;
 }
 body header nav h5 {
   color: #152c61;
-  font: 300 16px/24px Poppins;
+  font: 300 16px/24px Poppins-Light;
   margin: 0px;
 }
 body header nav h5 a {
@@ -54,6 +66,7 @@ body section {
   margin: 50px 80px 50px 79px;
   overflow: hidden;
   padding: 72px 71px 71px 68px;
+  height: 100vh;
 }
 body section #wall_header {
   align-items: flex-start;
@@ -75,7 +88,7 @@ body section #wall_header button {
   border-style: none;
   color: #ffffff;
   cursor: pointer;
-  font: 500 16px/24px Poppins;
+  font: 500 16px/24px Poppins-Medium;
   height: 38px;
   width: 190px;
 }
@@ -86,6 +99,7 @@ body section #no_message {
 body section #no_message p {
   color: #707070;
   font: 400 16px/24px Poppins;
+  margin: 20px 0px 0px 0px;
 }
 body section #message_inbox {
   padding: 0px;
@@ -99,9 +113,9 @@ body section #message_inbox .message {
   margin: 0px 0px 20px 0px;
   padding: 24px 30px 28px 26.32px;
 }
-body section #message_inbox .message #message_text {
+body section #message_inbox .message .message_text {
   color: #152c61;
-  font: 300 16px/24px Poppins;
+  font: 300 16px/24px Poppins-Light;
   margin: 0px 0px 20px 0px;
 }
 body section #message_inbox .message .message_control_list {
@@ -114,28 +128,35 @@ body section #message_inbox .message .message_control_list .message_element {
   align-items: center;
   display: flex;
   list-style: none;
-  margin: 0px 27px 0px 0px;
+  margin: 0px 0px 0px 0px;
 }
 body section #message_inbox .message .message_control_list .message_element img {
-  margin: 0px 5px 0px 0px;
+  margin: 0px;
 }
 body section #message_inbox .message .message_control_list .message_element .message_comment {
   color: #707070;
   cursor: pointer;
+  margin: 0px 24.68px 0px 5px;
 }
 body section #message_inbox .message .message_control_list .message_element .message_edit {
   color: #2c6bff;
   cursor: pointer;
+  margin: 0px 28px 0px 4px;
 }
-body section #message_inbox .message .message_control_list .message_element .message_delete,
+body section #message_inbox .message .message_control_list .message_element .message_delete {
+  color: #000000;
+  cursor: pointer;
+  margin: 0px 27.32px 0px 5px;
+  opacity: 0.6;
+}
 body section #message_inbox .message .message_control_list .message_element .message_profile {
   color: #000000;
   cursor: pointer;
+  margin: 0px 0px 0px 8px;
   opacity: 0.6;
 }
-body section #message_inbox .message .message_control_list .message_element .message_delete span,
 body section #message_inbox .message .message_control_list .message_element .message_profile span {
-  font: 500 16px/24px Poppins;
+  font: 500 16px/24px Poppins-Medium;
 }
 body section #message_inbox .message .message_control_list .message_element p {
   margin: 0px;
@@ -150,10 +171,16 @@ body section #message_inbox .message .edit_message_form form input {
   border: 1px solid #dce6ff;
   box-sizing: border-box;
   display: flex;
-  font: 300 16px/24px Poppins;
+  font: 300 16px/24px Poppins-Light;
   margin: 0px 0px 20px 0px;
   padding: 16px 9px 26px 10px;
   width: 100%;
+}
+body section #message_inbox .message .edit_message_form form a {
+  color: rgba(0, 0, 0, 0.6);
+  font: 400 16px/24px Poppins;
+  margin-right: 30px;
+  text-decoration: none;
 }
 body section #message_inbox .message .edit_message_form form button {
   background: #2c6bff;
@@ -161,7 +188,7 @@ body section #message_inbox .message .edit_message_form form button {
   border-style: none;
   color: #ffffff;
   cursor: pointer;
-  font: 500 16px/24px Poppins;
+  font: 500 16px/24px Poppins-Medium;
   height: 38px;
   margin: 0px;
   text-align: center;
@@ -184,7 +211,7 @@ body section #message_inbox .message .comment_form form input {
   border: 1px solid #dce6ff;
   box-sizing: border-box;
   display: flex;
-  font: 300 16px/24px Poppins;
+  font: 300 16px/24px Poppins-Light;
   margin-bottom: 20px;
   padding: 16px 9px 26px 10px;
   width: 100%;
@@ -195,7 +222,7 @@ body section #message_inbox .message .comment_form form button {
   border-style: none;
   color: #ffffff;
   cursor: pointer;
-  font: 500 16px/24px Poppins;
+  font: 500 16px/24px Poppins-Medium;
   height: 38px;
   margin: 0px;
   text-align: center;
@@ -215,7 +242,7 @@ body section #message_inbox .message #comment_inbox .comment {
 }
 body section #message_inbox .message #comment_inbox .comment #comment_text {
   color: #152c61;
-  font: 300 16px/24px Poppins;
+  font: 300 16px/24px Poppins-Light;
   margin: 0px 0px 20px 0px;
 }
 body section #message_inbox .message #comment_inbox .comment .comment_control_list {
@@ -228,24 +255,30 @@ body section #message_inbox .message #comment_inbox .comment .comment_control_li
   align-items: center;
   display: flex;
   list-style: none;
-  margin: 0px 27px 0px 0px;
+  margin: 0px;
 }
 body section #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element img {
-  margin: 0px 5px 0px 0px;
+  margin: 0px;
 }
 body section #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element .comment_edit {
   color: #2c6bff;
   cursor: pointer;
+  margin: 0px 28px 0px 5px;
 }
-body section #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element .comment_delete,
+body section #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element .comment_delete {
+  color: #000000;
+  cursor: pointer;
+  margin: 0px 28px 0px 5px;
+  opacity: 0.6;
+}
 body section #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element .comment_profile {
   color: #000000;
   cursor: pointer;
+  margin: 0px 0px 0px 8px;
   opacity: 0.6;
 }
-body section #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element .comment_delete span,
 body section #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element .comment_profile span {
-  font: 500 16px/24px Poppins;
+  font: 500 16px/24px Poppins-Medium;
 }
 body section #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element p {
   margin: 0px;
@@ -260,7 +293,7 @@ body section #message_inbox .message #comment_inbox .comment .edit_comment_form 
   border: 1px solid #dce6ff;
   box-sizing: border-box;
   display: flex;
-  font: 300 16px/24px Poppins;
+  font: 300 16px/24px Poppins-Light;
   margin: 0px 0px 20px 0px;
   padding: 16px 9px 26px 10px;
   width: 100%;
@@ -277,7 +310,7 @@ body section #message_inbox .message #comment_inbox .comment .edit_comment_form 
   border-style: none;
   color: #ffffff;
   cursor: pointer;
-  font: 500 16px/24px Poppins;
+  font: 500 16px/24px Poppins-Medium;
   height: 38px;
   margin: 0px;
   width: 190px;
@@ -313,7 +346,7 @@ body #create_message_modal .modal_dialog .modal_content .modal_body img {
 }
 body #create_message_modal .modal_dialog .modal_content .modal_body h3 {
   color: #152c61;
-  font: 500 26px/39px Poppins;
+  font: 500 26px/39px Poppins-Medium;
   margin: 0px 0px 40px 0px;
   text-align: center;
 }
@@ -323,13 +356,13 @@ body #create_message_modal .modal_dialog .modal_content .modal_body input {
   border: 1px solid #dce6ff;
   box-sizing: border-box;
   display: flex;
-  font: 300 16px/24px Poppins;
+  font: 300 16px/24px Poppins-Light;
   height: 185px;
   margin: 0px 0px 31px 0px;
   padding: 8px 7.37px 128px 13.93px;
   width: 835px;
 }
-body #create_message_modal .modal_dialog .modal_content .modal_body div a {
+body #create_message_modal .modal_dialog .modal_content .modal_body a {
   color: rgba(0, 0, 0, 0.6);
   font: 400 16px/24px Poppins;
   margin-right: 29px;
@@ -341,7 +374,7 @@ body #create_message_modal .modal_dialog .modal_content .modal_body button {
   border-style: none;
   color: #ffffff;
   cursor: pointer;
-  font: 500 16px/24px Poppins;
+  font: 500 16px/24px Poppins-Medium;
   height: 38px;
   margin: 0px;
   width: 190px;
@@ -369,7 +402,7 @@ body #delete_comment_modal .modal_dialog .modal_content .modal_body {
   margin: 50px auto 0px auto;
   padding: 46px 75px 60px 77px;
   position: relative;
-  text-align: center;
+  text-align: right;
 }
 body #delete_message_modal .modal_dialog .modal_content .modal_body img,
 body #delete_comment_modal .modal_dialog .modal_content .modal_body img {
@@ -381,24 +414,22 @@ body #delete_comment_modal .modal_dialog .modal_content .modal_body img {
 body #delete_message_modal .modal_dialog .modal_content .modal_body h3,
 body #delete_comment_modal .modal_dialog .modal_content .modal_body h3 {
   color: #152c61;
-  font: 500 26px/39px Poppins;
+  font: 500 26px/39px Poppins-Medium;
   margin: 0px 0px 40px 0px;
+  text-align: center;
 }
 body #delete_message_modal .modal_dialog .modal_content .modal_body p,
 body #delete_comment_modal .modal_dialog .modal_content .modal_body p {
   color: #152c61;
   font: 400 16px/24px Poppins;
   margin: 0px;
+  text-align: center;
 }
-body #delete_message_modal .modal_dialog .modal_content .modal_body div,
-body #delete_comment_modal .modal_dialog .modal_content .modal_body div {
-  margin-top: 34px;
-}
-body #delete_message_modal .modal_dialog .modal_content .modal_body div a,
-body #delete_comment_modal .modal_dialog .modal_content .modal_body div a {
+body #delete_message_modal .modal_dialog .modal_content .modal_body a,
+body #delete_comment_modal .modal_dialog .modal_content .modal_body a {
   color: rgba(0, 0, 0, 0.6);
   font: 400 16px/24px Poppins;
-  margin-right: 75px;
+  margin: 0px;
   text-decoration: none;
 }
 body #delete_message_modal .modal_dialog .modal_content .modal_body button,
@@ -408,8 +439,8 @@ body #delete_comment_modal .modal_dialog .modal_content .modal_body button {
   border-style: none;
   color: #ffffff;
   cursor: pointer;
-  font: 500 16px/24px Poppins;
-  height: 38px;
-  margin: 0px;
-  width: 190px;
+  font: 500 16px/24px Poppins-Medium;
+  height: 46px;
+  margin: 34px 0px 0px 75px;
+  width: 210px;
 }

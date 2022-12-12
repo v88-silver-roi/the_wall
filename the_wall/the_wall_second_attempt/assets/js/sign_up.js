@@ -1,5 +1,6 @@
 const sign_up_form = document.getElementById("sign_up_form");
 
+/** Submit Signup Form */
 sign_up_form.addEventListener("submit", submitSignUpForm);
 
 function submitSignUpForm(event){
@@ -20,9 +21,16 @@ function submitSignUpForm(event){
     var emailValidRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     var passwordValidRegex=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
 
+    /** Check if inputs are not empty */
     if(input.value != ""){
+
+        /** Check if email is valid */
         if(email.value.match(emailValidRegex)){
+
+            /** Check if password is valid*/
             if(password.value.match(passwordValidRegex)){
+
+                /** Check if passwords are identical */
                 if (password.value == confirm_password.value){
                     window.location.href = "./wall.html";   
                 }

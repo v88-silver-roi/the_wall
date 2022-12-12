@@ -98,7 +98,6 @@ body section #message_inbox .message {
   list-style: none;
   margin: 0px 0px 20px 0px;
   padding: 24px 30px 28px 26.32px;
-  width: 1140px;
 }
 body section #message_inbox .message #message_text {
   color: #152c61;
@@ -213,7 +212,6 @@ body section #message_inbox .message #comment_inbox .comment {
   list-style: none;
   margin-top: 20px;
   padding: 24px 30px 25px 25px;
-  width: 1078px;
 }
 body section #message_inbox .message #comment_inbox .comment #comment_text {
   color: #152c61;

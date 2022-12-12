@@ -56,7 +56,7 @@
                 <div class="modal_body">
                     <img src="../assets/images/cancel.png" alt="close icon" id="cancel_delete_message" class="close_modal">
                     <h3>Confirm Delete Message</h3>
-                    <input type="hidden" class="message_id">
+                    <input type="hidden" id="delete_message_id">
                     <p>Are you sure you want to remove this message?</p>
                     <p>This action cannot be undone.</p>
                     <div>
@@ -74,7 +74,7 @@
                 <div class="modal_body">
                     <img src="../assets/images/cancel.png" alt="close icon" id="cancel_delete_comment" class="close_modal">
                     <h3>Confirm Delete Comment</h3>
-                    <input type="hidden" class="comment_id">
+                    <input type="hidden" id="delete_comment_id">
                     <p>Are you sure you want to remove this comment?</p>
                     <p>This action cannot be undone.</p>
                     <div>
@@ -88,7 +88,7 @@
 
     <div class="hidden" id="hidden_message_clone">
         <li class="message">
-            <p id="message_text" class="">Sample text.</p>
+            <p class="message_text" class="">Sample text.</p>
             <ul class="message_control_list">
                 <li class="message_element">
                     <img id="comment_icon" src="../assets/images/messages-bubble-square-text.png" alt="message_icon">
@@ -127,7 +127,8 @@
 
     <div class="hidden" id="hidden_comment_clone">
         <li class="comment">
-            <p id="comment_text" class="">Sample text.</p>
+            <input type="hidden" class="comment_message_id">
+            <p class="comment_text" class="">Sample text.</p>
             <ul class="comment_control_list">
                 <li class="comment_element">
                     <img src="../assets/images/pencil-write.png" alt="edit_icon">

@@ -31,47 +31,48 @@
   pointer-events: none;
 }
 body {
-  background-color: rgba(44, 107, 255, 0.51);
-  display: flex;
-  justify-content: flex-start;
   margin: 0px auto;
-  max-width: 1440px;
 }
-body section {
-  background-color: #fbfbfb;
-  box-sizing: border-box;
+body main {
+  display: flex;
   height: 100vh;
+}
+body main section {
+  background-color: #fbfbfb;
+  flex: 0.78;
   padding: 117px 204px 117px 203px;
-  width: 857px;
   z-index: 0;
 }
-body section div {
+body main section div {
   background: #ffffff;
   border-radius: 6px;
+  box-sizing: border-box;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+  margin: 0px auto;
   padding: 31px 40px 35px 40px;
+  width: 450px;
 }
-body section div h3 {
+body main section div h3 {
   color: #2c6bff;
   font: 600 22px/33px Poppins-SemiBold;
   margin: 0px 0px 39px 0px;
 }
-body section div h1 {
+body main section div h1 {
   color: #152c61;
   font: 600 40px/60px Poppins-SemiBold;
   margin: 0px 0px 18px 0px;
 }
-body section div form label {
+body main section div form label {
   color: #152c61;
   display: block;
   font: 300 16px/24px Poppins-Light;
   margin: 28px 0px 7px 0px;
 }
-body section div form label[for="email"] {
+body main section div form label[for="email"] {
   display: inline-block;
   margin-top: 0px;
 }
-body section div form input {
+body main section div form input {
   background: rgba(44, 107, 255, 0.08);
   border-radius: 4px;
   border-style: none;
@@ -82,25 +83,25 @@ body section div form input {
   padding: 17px 10px;
   width: 370px;
 }
-body section div form p {
+body main section div form p {
   color: #152c61;
   display: inline-block;
   font: 300 16px/24px Poppins-Light;
   margin: 33px 0px 0px 0px;
   text-align: center;
 }
-body section div form p a {
+body main section div form p a {
   color: #2c6bff;
   text-decoration: none;
 }
-body section div form .error {
+body main section div form .error {
   color: #e1554c;
   display: block;
   font: 300 14px/31px Poppins-Light;
   margin: 0px;
   text-align: left;
 }
-body section div form button {
+body main section div form button {
   background: #2c6bff;
   border-radius: 4px;
   border-style: none;
@@ -111,15 +112,19 @@ body section div form button {
   margin: 34px auto 35px auto;
   padding: 15px 46px 15px 45px;
 }
-body section div p {
+body main section div p {
   color: rgba(0, 0, 0, 0.2);
   text-align: center;
 }
-body section div p a {
+body main section div p a {
   color: #2c6bff;
   text-decoration: none;
 }
-body .bg_image img {
+body main .bg_image {
+  background-color: rgba(44, 107, 255, 0.51);
+  flex: 1;
+}
+body main .bg_image img {
   position: absolute;
   margin: 335.2px 0px 0px -67px;
   z-index: 1;

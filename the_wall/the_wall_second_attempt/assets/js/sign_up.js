@@ -1,18 +1,18 @@
-const sign_up_form = document.getElementById("sign_up_form");
+let sign_up_form = document.getElementById("sign_up_form");
 
 /** Submit Signup Form */
 sign_up_form.addEventListener("submit", submitSignUpForm);
 
 function submitSignUpForm(event){
     event.preventDefault(event);
-    const input = document.querySelector(".input");
-    const email = document.getElementById("email");
-    const password = document.getElementById("password");
-    const confirm_password = document.getElementById("confirm_password");
-    const email_error = document.getElementById("email_error");
-    const password_error = document.getElementById("password_error");
-    const confirm_password_error = document.getElementById("confirm_password_error");
-    const empty_input_error = document.getElementById("empty_input_error");
+    let input = document.querySelector(".input");
+    let email = document.getElementById("email");
+    let password = document.getElementById("password");
+    let confirm_password = document.getElementById("confirm_password");
+    let email_error = document.getElementById("email_error");
+    let password_error = document.getElementById("password_error");
+    let confirm_password_error = document.getElementById("confirm_password_error");
+    let empty_input_error = document.getElementById("empty_input_error");
     
     email_error.classList.add("hidden");
     password_error.classList.add("hidden");

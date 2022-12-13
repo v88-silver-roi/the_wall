@@ -35,7 +35,6 @@ body {
 }
 body main {
   display: flex;
-  height: 100vh;
 }
 body main section {
   background-color: #fbfbfb;

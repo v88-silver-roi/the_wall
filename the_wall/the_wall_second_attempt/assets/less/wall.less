@@ -5,12 +5,15 @@ body{
     margin: 0px;
 
     header{
+        background: @color_white;
+        border-radius: 6px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+
         nav{
-            background: @color_white;
-            border-radius: 6px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
             display: flex;
             justify-content: space-between;
+            margin: 0px auto;
+            max-width: 1440px;
             padding: 39px 84px 39px 78px;
 
             h3{
@@ -35,312 +38,317 @@ body{
     }
     
     section{
-        background: @color_white;
-        border-radius: 6px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
-        box-sizing: border-box;
         margin: 50px 80px 50px 79px;
-        overflow: hidden;
-        padding: 72px 71px 71px 68px;
-        height: 100vh;
 
-        #wall_header{
-            align-items: flex-start;
-            display: flex;
-            justify-content: space-between;
+        #wall_container{
+            background: @color_white;
+            border-radius: 6px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+            box-sizing: border-box;
+            height: 100vh;
+            margin: 0px auto;
+            max-width: 1440px;
+            overflow: hidden;
+            padding: 72px 71px 71px 68px;
 
-            h5{
-                color: @color_gray;
-                font: 400 16px/24px Poppins;
-                margin: 0px;
+            #wall_header{
+                align-items: flex-start;
+                display: flex;
+                justify-content: space-between;
 
-                span{
-                    color: @color_blue;
-                    font: 600 16px/24px Poppins;
-                }
-            }
-
-            button{
-                background: @color_blue;
-                border-radius: 4px;
-                border-style: none;
-                color: @color_white;
-                cursor: pointer;
-                font: 500 16px/24px Poppins-Medium;
-                height: 38px;
-                width: 190px;
-            }
-        }
-
-        #no_message{
-            margin-top: 126px;
-            text-align: center;
-
-            p{
-                color: @color_gray;
-                font: 400 16px/24px Poppins;
-                margin: 20px 0px 0px 0px;
-            }
-        }
-
-        #message_inbox{
-            padding: 0px;
-            
-            .message{
-                background-color: @color_white;
-                border-radius: 6px;
-                border: 1px solid #dce6ff;
-                box-sizing: border-box;
-                list-style: none;
-                margin: 0px 0px 20px 0px;
-                padding: 24px 30px 28px 26.32px;
-
-                .message_text{
-                    color: @color_dark_blue;
-                    font: 300 16px/24px Poppins-Light;
-                    margin: 0px 0px 20px 0px;
-                }
-
-                .message_control_list{
-                    align-items: center;
-                    display: flex;
+                h5{
+                    color: @color_gray;
+                    font: 400 16px/24px Poppins;
                     margin: 0px;
-                    padding: 0px;
 
-                    .message_element{
-                        align-items: center;
-                        display: flex;
-                        list-style: none;
-                        margin: 0px 0px 0px 0px;
-
-                        img{
-                            margin: 0px;
-                        }
-
-                        .message_comment{
-                            color: @color_gray;
-                            cursor: pointer;
-                            margin: 0px 24.68px 0px 5px;
-                        }
-
-                        .message_edit{
-                            color: @color_blue;
-                            cursor: pointer;
-                            margin: 0px 28px 0px 4px;
-                        }
-
-                        .message_delete{
-                            color: @color_black;
-                            cursor: pointer;
-                            margin: 0px 27.32px 0px 5px;
-                            opacity: 0.6;
-                        }
-
-                        .message_profile{
-                            color: @color_black;
-                            cursor: pointer;
-                            margin: 0px 0px 0px 8px;
-                            opacity: 0.6;
-
-                            span{
-                                font: 500 16px/24px Poppins-Medium;
-                            }
-                        }
-
-                        p{
-                            margin: 0px;
-                        }
+                    span{
+                        color: @color_blue;
+                        font: 600 16px/24px Poppins;
                     }
                 }
 
-                .edit_message_form{
-                    form{
-                        display: block;
-                        text-align: right;
-
-                        input{
-                            background-color: #f5f8ff;
-                            border-radius: 6px;
-                            border: 1px solid #dce6ff;
-                            box-sizing: border-box;
-                            display: flex;
-                            font: 300 16px/24px Poppins-Light;
-                            margin: 0px 0px 20px 0px;
-                            padding: 16px 9px 26px 10px;
-                            width: 100%;
-                        }
-
-                        a{
-                            color: rgba(0, 0, 0, 0.6);
-                            font: 400 16px/24px Poppins;
-                            margin-right: 30px;
-                            text-decoration: none;
-                        }
-
-                        button{
-                            background: @color_blue;
-                            border-radius: 4px;
-                            border-style: none;
-                            color: @color_white;
-                            cursor: pointer;
-                            font: 500 16px/24px Poppins-Medium;
-                            height: 38px;
-                            margin: 0px;
-                            text-align: center;
-                            width: 190px;
-                        }
-                    }
+                button{
+                    background: @color_blue;
+                    border-radius: 4px;
+                    border-style: none;
+                    color: @color_white;
+                    cursor: pointer;
+                    font: 500 16px/24px Poppins-Medium;
+                    height: 38px;
+                    width: 190px;
                 }
+            }
 
-                .comment_form{
+            #no_message{
+                margin-top: 126px;
+                text-align: center;
+
+                p{
+                    color: @color_gray;
+                    font: 400 16px/24px Poppins;
+                    margin: 20px 0px 0px 0px;
+                }
+            }
+
+            #message_inbox{
+                padding: 0px;
+                
+                .message{
                     background-color: @color_white;
                     border-radius: 6px;
                     border: 1px solid #dce6ff;
-                    margin-top: 26px;
-                    padding: 30px 31px 20px 24px;
+                    box-sizing: border-box;
+                    list-style: none;
+                    margin: 0px 0px 20px 0px;
+                    padding: 24px 30px 28px 26.32px;
 
-                    form{
-                        display: block;
-                        text-align: right;
+                    .message_text{
+                        color: @color_dark_blue;
+                        font: 300 16px/24px Poppins-Light;
+                        margin: 0px 0px 20px 0px;
+                    }
 
-                        input{
-                            background-color: #f5f8ff;
-                            border-radius: 6px;
-                            border: 1px solid #dce6ff;
-                            box-sizing: border-box;
+                    .message_control_list{
+                        align-items: center;
+                        display: flex;
+                        margin: 0px;
+                        padding: 0px;
+
+                        .message_element{
+                            align-items: center;
                             display: flex;
-                            font: 300 16px/24px Poppins-Light;
-                            margin-bottom: 20px;
-                            padding: 16px 9px 26px 10px;
-                            width: 100%;
-                        }
+                            list-style: none;
+                            margin: 0px 0px 0px 0px;
 
-                        button{
-                            background: @color_blue;
-                            border-radius: 4px;
-                            border-style: none;
-                            color: @color_white;
-                            cursor: pointer;
-                            font: 500 16px/24px Poppins-Medium;
-                            height: 38px;
-                            margin: 0px;
-                            text-align: center;
-                            width: 190px;
+                            img{
+                                margin: 0px;
+                            }
+
+                            .message_comment{
+                                color: @color_gray;
+                                cursor: pointer;
+                                margin: 0px 24.68px 0px 5px;
+                            }
+
+                            .message_edit{
+                                color: @color_blue;
+                                cursor: pointer;
+                                margin: 0px 28px 0px 4px;
+                            }
+
+                            .message_delete{
+                                color: @color_black;
+                                cursor: pointer;
+                                margin: 0px 27.32px 0px 5px;
+                                opacity: 0.6;
+                            }
+
+                            .message_profile{
+                                color: @color_black;
+                                cursor: pointer;
+                                margin: 0px 0px 0px 8px;
+                                opacity: 0.6;
+
+                                span{
+                                    font: 500 16px/24px Poppins-Medium;
+                                }
+                            }
+
+                            p{
+                                margin: 0px;
+                            }
                         }
                     }
-                }
 
-                #comment_inbox{
-                    padding: 0px;
+                    .edit_message_form{
+                        form{
+                            display: block;
+                            text-align: right;
 
-                    .comment{
+                            input{
+                                background-color: #f5f8ff;
+                                border-radius: 6px;
+                                border: 1px solid #dce6ff;
+                                box-sizing: border-box;
+                                display: flex;
+                                font: 300 16px/24px Poppins-Light;
+                                margin: 0px 0px 20px 0px;
+                                padding: 16px 9px 26px 10px;
+                                width: 100%;
+                            }
+
+                            a{
+                                color: rgba(0, 0, 0, 0.6);
+                                font: 400 16px/24px Poppins;
+                                margin-right: 30px;
+                                text-decoration: none;
+                            }
+
+                            button{
+                                background: @color_blue;
+                                border-radius: 4px;
+                                border-style: none;
+                                color: @color_white;
+                                cursor: pointer;
+                                font: 500 16px/24px Poppins-Medium;
+                                height: 38px;
+                                margin: 0px;
+                                text-align: center;
+                                width: 190px;
+                            }
+                        }
+                    }
+
+                    .comment_form{
                         background-color: @color_white;
                         border-radius: 6px;
                         border: 1px solid #dce6ff;
-                        box-sizing: border-box;
-                        list-style: none;
-                        margin-top: 20px;
-                        padding: 24px 30px 25px 25px;
-        
-                        #comment_text{
-                            color: @color_dark_blue;
-                            font: 300 16px/24px Poppins-Light;
-                            margin: 0px 0px 20px 0px;
-                        }
-        
-                        .comment_control_list{
-                            align-items: center;
-                            display: flex;
-                            margin: 0px;
-                            padding: 0px;
-        
-                            .comment_element{
-                                align-items: center;
-                                display: flex;
-                                list-style: none;
-                                margin: 0px;
-        
-                                img{
-                                    margin: 0px;
-                                }
-        
-                                .comment_edit{
-                                    color: @color_blue;
-                                    cursor: pointer;
-                                    margin: 0px 28px 0px 5px;
-                                }
-        
-                                .comment_delete{
-                                    color: @color_black;
-                                    cursor: pointer;
-                                    margin: 0px 28px 0px 5px;
-                                    opacity: 0.6;
-                                }
+                        margin-top: 26px;
+                        padding: 30px 31px 20px 24px;
 
-                                .comment_profile{
-                                    color: @color_black;
-                                    cursor: pointer;
-                                    margin: 0px 0px 0px 8px;
-                                    opacity: 0.6;
-        
-                                    span{
-                                        font: 500 16px/24px Poppins-Medium;
-                                    }
-                                }
-                                p{
-                                    margin: 0px;
-                                }
+                        form{
+                            display: block;
+                            text-align: right;
+
+                            input{
+                                background-color: #f5f8ff;
+                                border-radius: 6px;
+                                border: 1px solid #dce6ff;
+                                box-sizing: border-box;
+                                display: flex;
+                                font: 300 16px/24px Poppins-Light;
+                                margin-bottom: 20px;
+                                padding: 16px 9px 26px 10px;
+                                width: 100%;
+                            }
+
+                            button{
+                                background: @color_blue;
+                                border-radius: 4px;
+                                border-style: none;
+                                color: @color_white;
+                                cursor: pointer;
+                                font: 500 16px/24px Poppins-Medium;
+                                height: 38px;
+                                margin: 0px;
+                                text-align: center;
+                                width: 190px;
                             }
                         }
+                    }
 
-                        .edit_comment_form{
-                            form{
-                                display: block;
-                                text-align: right;
-        
-                                input{
-                                    background-color: #f5f8ff;
-                                    border-radius: 6px;
-                                    border: 1px solid #dce6ff;
-                                    box-sizing: border-box;
+                    #comment_inbox{
+                        padding: 0px;
+
+                        .comment{
+                            background-color: @color_white;
+                            border-radius: 6px;
+                            border: 1px solid #dce6ff;
+                            box-sizing: border-box;
+                            list-style: none;
+                            margin-top: 20px;
+                            padding: 24px 30px 25px 25px;
+            
+                            .comment_text{
+                                color: @color_dark_blue;
+                                font: 300 16px/24px Poppins-Light;
+                                margin: 0px 0px 20px 0px;
+                            }
+            
+                            .comment_control_list{
+                                align-items: center;
+                                display: flex;
+                                margin: 0px;
+                                padding: 0px;
+            
+                                .comment_element{
+                                    align-items: center;
                                     display: flex;
-                                    font: 300 16px/24px Poppins-Light;
-                                    margin: 0px 0px 20px 0px;
-                                    padding: 16px 9px 26px 10px;
-                                    width: 100%;
-                                }
+                                    list-style: none;
+                                    margin: 0px;
+            
+                                    img{
+                                        margin: 0px;
+                                    }
+            
+                                    .comment_edit{
+                                        color: @color_blue;
+                                        cursor: pointer;
+                                        margin: 0px 28px 0px 5px;
+                                    }
+            
+                                    .comment_delete{
+                                        color: @color_black;
+                                        cursor: pointer;
+                                        margin: 0px 28px 0px 5px;
+                                        opacity: 0.6;
+                                    }
 
-                                div{
-                                    a{
-                                        color: rgba(0, 0, 0, 0.6);
-                                        font: 400 16px/24px Poppins;
-                                        margin-right: 29px;
-                                        text-decoration: none;
+                                    .comment_profile{
+                                        color: @color_black;
+                                        cursor: pointer;
+                                        margin: 0px 0px 0px 8px;
+                                        opacity: 0.6;
+            
+                                        span{
+                                            font: 500 16px/24px Poppins-Medium;
+                                        }
+                                    }
+                                    p{
+                                        margin: 0px;
                                     }
                                 }
-        
-                                button{
-                                    background: @color_blue;
-                                    border-radius: 4px;
-                                    border-style: none;
-                                    color: @color_white;
-                                    cursor: pointer;
-                                    font: 500 16px/24px Poppins-Medium;
-                                    height: 38px;
-                                    margin: 0px;
-                                    width: 190px;
+                            }
+
+                            .edit_comment_form{
+                                form{
+                                    display: block;
+                                    text-align: right;
+            
+                                    input{
+                                        background-color: #f5f8ff;
+                                        border-radius: 6px;
+                                        border: 1px solid #dce6ff;
+                                        box-sizing: border-box;
+                                        display: flex;
+                                        font: 300 16px/24px Poppins-Light;
+                                        margin: 0px 0px 20px 0px;
+                                        padding: 16px 9px 26px 10px;
+                                        width: 100%;
+                                    }
+
+                                    div{
+                                        a{
+                                            color: rgba(0, 0, 0, 0.6);
+                                            font: 400 16px/24px Poppins;
+                                            margin-right: 29px;
+                                            text-decoration: none;
+                                        }
+                                    }
+            
+                                    button{
+                                        background: @color_blue;
+                                        border-radius: 4px;
+                                        border-style: none;
+                                        color: @color_white;
+                                        cursor: pointer;
+                                        font: 500 16px/24px Poppins-Medium;
+                                        height: 38px;
+                                        margin: 0px;
+                                        width: 190px;
+                                    }
                                 }
                             }
                         }
                     }
                 }
-            }
 
-            .message:first-child{
-                margin-top: 30px !important;
+                .message:first-child{
+                    margin-top: 30px !important;
+                }
             }
         }
-    }
+    }  
 
     #create_message_modal{
         background-color: rgba(0, 0, 0, 0.4);

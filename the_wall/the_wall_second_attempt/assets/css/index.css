@@ -77,7 +77,6 @@ body main section .form form input {
   margin: 0px;
   padding: 17px 10px;
   width: 370px;
-  -webkit-text-security: square;
 }
 body main section .form form input[type="password"] {
   margin-bottom: 0px;

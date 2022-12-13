@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../assets/images/wall_red.png">
     <meta name="description" content="The wall view of assignment">
     <meta name="author" content="Silver Roi Ramos">
     <title>The Wall | Home Page</title>
@@ -56,10 +56,12 @@
                 <div class="modal_body">
                     <img src="../assets/images/cancel.png" alt="close icon" id="cancel_delete_message" class="close_modal">
                     <h3>Confirm Delete Message</h3>
-                    <input type="hidden" id="delete_message_id">
-                    <p>Are you sure you want to remove this message? This action cannot be undone.</p>
-                    <a href="#" id="cancel_delete_message_modal" class="close_modal">Cancel</a>
-                    <button type="button" id="remove_message">Yes, Remove it.</button>
+                    <form action="#">
+                        <input type="hidden" id="delete_message_id">
+                        <p>Are you sure you want to remove this message? This action cannot be undone.</p>
+                        <a href="#" id="cancel_delete_message_modal" class="close_modal">Cancel</a>
+                        <button type="submit" id="remove_message">Yes, Remove it.</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -71,17 +73,20 @@
                 <div class="modal_body">
                     <img src="../assets/images/cancel.png" alt="close icon" id="cancel_delete_comment" class="close_modal">
                     <h3>Confirm Delete Comment</h3>
-                    <input type="hidden" id="delete_comment_id">
-                    <p>Are you sure you want to remove this comment?</p>
-                    <p>This action cannot be undone.</p>
-                    <a href="#" id="cancel_delete_comment_modal" class="close_modal">Cancel</a>
-                    <button type="button" id="remove_comment">Yes, Remove it.</button>
+                    <form action="#">
+                        <input type="hidden" id="comment_message_id">
+                        <input type="hidden" id="delete_comment_id">
+                        <p>Are you sure you want to remove this comment?</p>
+                        <p>This action cannot be undone.</p>
+                        <a href="#" id="cancel_delete_comment_modal" class="close_modal">Cancel</a>
+                        <button type="submit" id="remove_comment">Yes, Remove it.</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 
-    <ul class="hidden" id="hidden_message_clone">
+    <ul class="hidden" id="hidden_clone">
         <li class="message">
             <p class="message_text">Sample text.</p>
             <ul class="message_control_list">
@@ -119,8 +124,6 @@
                 
             </ul>
         </li>
-    </ul>
-    <ul class="hidden" id="hidden_comment_clone">
         <li class="comment">
             <input type="hidden" class="comment_message_id">
             <p class="comment_text">Sample text.</p>

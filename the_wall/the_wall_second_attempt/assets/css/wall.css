@@ -51,6 +51,11 @@ body header nav h3 {
   font: 500 26px/39px Poppins-Medium;
   margin: 0px;
 }
+@media only screen and (max-width: 480px) {
+  body header nav h3 {
+    font: 500 24px/33px Poppins-Medium;
+  }
+}
 body header nav h5 {
   color: #152c61;
   font: 300 16px/24px Poppins-Light;
@@ -58,9 +63,26 @@ body header nav h5 {
 }
 body header nav h5 a {
   color: #2c6bff;
-  font: 600 16px/24px Poppins;
+  font: 600 16px/24px Poppins-SemiBold;
   margin-left: 16px;
   text-decoration: none;
+}
+@media only screen and (max-width: 480px) {
+  body header nav h5 a {
+    font: 600 14px/21px Poppins-SemiBold;
+  }
+}
+@media only screen and (max-width: 480px) {
+  body header nav h5 {
+    font: 300 14px/21px Poppins-Light;
+    text-align: right;
+  }
+}
+@media only screen and (max-width: 480px) {
+  body header nav {
+    align-items: center;
+    padding: 19px 34px 19px 28px;
+  }
 }
 body section {
   margin: 50px 80px 50px 79px;
@@ -89,6 +111,16 @@ body section #wall_container #wall_header h5 span {
   color: #2c6bff;
   font: 600 16px/24px Poppins;
 }
+@media only screen and (max-width: 480px) {
+  body section #wall_container #wall_header h5 span {
+    font: 600 14px/21px Poppins;
+  }
+}
+@media only screen and (max-width: 480px) {
+  body section #wall_container #wall_header h5 {
+    font: 400 14px/21px Poppins;
+  }
+}
 body section #wall_container #wall_header button {
   background: #2c6bff;
   border-radius: 4px;
@@ -98,6 +130,20 @@ body section #wall_container #wall_header button {
   font: 500 16px/24px Poppins-Medium;
   height: 38px;
   width: 190px;
+}
+@media only screen and (max-width: 480px) {
+  body section #wall_container #wall_header button {
+    font: 400 14px/21px Poppins;
+    height: 48px;
+    width: 120px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  body section #wall_container #wall_header {
+    margin: 0px auto;
+    max-width: 1440px;
+    padding: 0px;
+  }
 }
 body section #wall_container #no_message {
   margin-top: 126px;
@@ -328,6 +374,18 @@ body section #wall_container #message_inbox #message_1 {
 }
 body section #wall_container #message_inbox .message:first-child {
   margin-top: 30px !important;
+}
+@media only screen and (max-width: 480px) {
+  body section #wall_container {
+    margin: 0px auto;
+    max-width: 1440px;
+    padding: 30px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  body section {
+    margin: 20px;
+  }
 }
 body #create_message_modal {
   background-color: rgba(0, 0, 0, 0.4);

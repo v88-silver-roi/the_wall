@@ -46,8 +46,8 @@ body main section {
 body main section .form {
   background: #ffffff;
   border-radius: 6px;
-  box-sizing: border-box;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
   margin: 0px auto;
   padding: 31px 40px 35px 40px;
   width: 450px;
@@ -57,15 +57,32 @@ body main section .form h3 {
   font: 600 22px/33px Poppins-SemiBold;
   margin: 0px 0px 39px 0px;
 }
+@media only screen and (max-width: 480px) {
+  body main section .form h3 {
+    font: 600 16px/24px Poppins-SemiBold;
+    margin: 0px 0px 10px 0px;
+  }
+}
 body main section .form h1 {
   color: #152c61;
   font: 600 40px/60px Poppins-SemiBold;
   margin: 0px 0px 18px 0px;
 }
+@media only screen and (max-width: 480px) {
+  body main section .form h1 {
+    font: 600 22px/33px Poppins-SemiBold;
+    margin: 0px 0px 10px 0px;
+  }
+}
 body main section .form form label {
   color: #152c61;
   font: 300 16px/24px Poppins-Light;
   margin-bottom: 7px;
+}
+@media only screen and (max-width: 480px) {
+  body main section .form form label {
+    font: 300 14px/21px Poppins-Light;
+  }
 }
 body main section .form form input {
   background: rgba(44, 107, 255, 0.08);
@@ -78,11 +95,24 @@ body main section .form form input {
   padding: 17px 10px;
   width: 370px;
 }
+@media only screen and (max-width: 480px) {
+  body main section .form form input {
+    font: 400 14px/21px Poppins;
+    margin: 0px;
+    padding: 12px 5px;
+    width: 290px;
+  }
+}
 body main section .form form input[type="password"] {
   margin-bottom: 0px;
 }
 body main section .form form > div {
   font: 300 16px/24px Poppins-Light;
+}
+@media only screen and (max-width: 480px) {
+  body main section .form form > div {
+    font: 300 14px/21px Poppins-Light;
+  }
 }
 body main section .form form #label_password {
   display: flex;
@@ -100,6 +130,11 @@ body main section .form form .error {
   margin: 0px;
   text-align: left;
 }
+@media only screen and (max-width: 480px) {
+  body main section .form form .error {
+    font: 300 12px/21px Poppins-Light;
+  }
+}
 body main section .form form button {
   background: #2c6bff;
   border-radius: 4px;
@@ -111,6 +146,13 @@ body main section .form form button {
   margin: 40px auto 35px auto;
   padding: 15px 46px 15px 45px;
 }
+@media only screen and (max-width: 480px) {
+  body main section .form form button {
+    font: 600 14px/21px Poppins-SemiBold;
+    margin: 20px auto 17px auto;
+    padding: 7px 23px 7px 22px;
+  }
+}
 body main section .form p {
   color: rgba(0, 0, 0, 0.2);
   font: 400 16px/22px Poppins;
@@ -121,6 +163,27 @@ body main section .form p a {
   color: #2c6bff;
   text-decoration: none;
 }
+@media only screen and (max-width: 480px) {
+  body main section .form p {
+    font: 400 14px/21px Poppins;
+  }
+}
+@media only screen and (max-width: 480px) {
+  body main section .form {
+    padding: 21px 30px 25px 30px;
+    width: 350px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  body main section {
+    align-items: center;
+    background-color: rgba(44, 107, 255, 0.51);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    padding: 0px;
+  }
+}
 body main .bg_image {
   background-color: rgba(44, 107, 255, 0.51);
   flex: 1;
@@ -129,4 +192,14 @@ body main .bg_image img {
   position: absolute;
   margin: 192px 0px 0px -67px;
   z-index: 1;
+}
+@media only screen and (max-width: 480px) {
+  body main .bg_image img {
+    display: none;
+  }
+}
+@media only screen and (max-width: 480px) {
+  body main {
+    display: block !important;
+  }
 }

@@ -22,6 +22,12 @@ body{
                 margin: 0px;
             }
 
+            @media only screen and (max-width: 480px){
+                h3{
+                    font: 500 24px/33px Poppins-Medium;
+                }
+            }
+
             h5{
                 color: @color_dark_blue;
                 font: 300 16px/24px Poppins-Light;
@@ -29,14 +35,34 @@ body{
 
                 a{
                     color: @color_blue;
-                    font: 600 16px/24px Poppins;
+                    font: 600 16px/24px Poppins-SemiBold;
                     margin-left: 16px;
                     text-decoration: none;
                 }
+
+                @media only screen and (max-width: 480px){
+                    a{
+                        font: 600 14px/21px Poppins-SemiBold;
+                    }
+                }
+            }
+
+            @media only screen and (max-width: 480px){
+                h5{
+                    font: 300 14px/21px Poppins-Light;
+                    text-align: right;
+                }
+            }
+        }
+
+        @media only screen and (max-width: 480px){
+            nav{
+                align-items: center;
+                padding: 19px 34px 19px 28px;
             }
         }
     }
-    
+
     section{
         margin: 50px 80px 50px 79px;
 
@@ -64,6 +90,18 @@ body{
                         color: @color_blue;
                         font: 600 16px/24px Poppins;
                     }
+
+                    @media only screen and (max-width: 480px){
+                        span{
+                            font: 600 14px/21px Poppins;
+                        }
+                    }
+                }
+
+                @media only screen and (max-width: 480px){
+                    h5{
+                        font: 400 14px/21px Poppins;
+                    }
                 }
 
                 button{
@@ -75,6 +113,22 @@ body{
                     font: 500 16px/24px Poppins-Medium;
                     height: 38px;
                     width: 190px;
+                }
+
+                @media only screen and (max-width: 480px){
+                    button{
+                        font: 400 14px/21px Poppins;
+                        height: 48px;
+                        width: 120px;
+                    }
+                }
+            }
+
+            @media only screen and (max-width: 480px){
+                #wall_header{
+                    margin: 0px auto;
+                    max-width: 1440px;
+                    padding: 0px;
                 }
             }
 
@@ -352,7 +406,21 @@ body{
                 }
             }
         }
-    }  
+        
+        @media only screen and (max-width: 480px){
+            #wall_container{
+                margin: 0px auto;
+                max-width: 1440px;
+                padding: 30px;
+            }
+        }
+    }
+    
+    @media only screen and (max-width: 480px){
+        section{
+            margin: 20px;
+        }
+    }
 
     #create_message_modal{
         background-color: rgba(0, 0, 0, 0.4);

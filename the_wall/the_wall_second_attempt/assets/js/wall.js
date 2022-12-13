@@ -45,19 +45,19 @@ function postMessage(event){
     event.preventDefault(event);
     let message_clone = document.getElementById("hidden_clone").querySelector(".message").cloneNode(true);
     let message_length = document.getElementsByClassName("message").length;
-    let message_id = "message_"+message_length;
     let add_comment_button = message_clone.querySelector(".message_comment");
     let comment_input = message_clone.querySelector("#create_comment_input");
-    message_clone.setAttribute("id", message_id);
+    message_clone.setAttribute("data-message-id", message_length);
     message_clone.querySelector(".message_text").textContent = message_input.value;
     no_message.classList.add("hidden");
     document.getElementById("message_inbox").prepend(message_clone);
     create_message_modal.querySelector("#create_message_input").value = "";
     create_message_modal.classList.add("hidden");
     countMessageLength();
+    checkMessageInput();
 
-    let current_message_id = message_clone.closest(".message").getAttribute("id");
-    let selected_message_id = document.getElementById(current_message_id);
+    let data_message_id = message_clone.closest(".message").getAttribute("data-message-id");
+    let selected_message = document.querySelector('li[data-message-id="'+data_message_id+'"]');
 
     /** Show edit message form */
     message_clone.querySelector(".message_edit").addEventListener("click", openEditMessageBox);
@@ -84,49 +84,49 @@ function postMessage(event){
     message_clone.querySelector(".post_comment").addEventListener("click", postComment);
 
     function openEditMessageBox(){
-        let message = selected_message_id.querySelector(".message_text").textContent;
-        selected_message_id.querySelector(".message_text").classList.add("hidden");
-        selected_message_id.querySelector(".message_control_list").classList.add("hidden");
-        selected_message_id.querySelector(".edit_message_form").classList.remove("hidden");
-        selected_message_id.querySelector(".edit_message_input").value = message;
+        let message = selected_message.querySelector(".message_text").textContent;
+        selected_message.querySelector(".message_text").classList.add("hidden");
+        selected_message.querySelector(".message_control_list").classList.add("hidden");
+        selected_message.querySelector(".edit_message_form").classList.remove("hidden");
+        selected_message.querySelector(".edit_message_input").value = message;
     }
 
     function closeEditMessageBox(){
-        selected_message_id.querySelector(".message_text").classList.remove("hidden");
-        selected_message_id.querySelector(".message_control_list").classList.remove("hidden");
-        selected_message_id.querySelector(".edit_message_form").classList.add("hidden");
+        selected_message.querySelector(".message_text").classList.remove("hidden");
+        selected_message.querySelector(".message_control_list").classList.remove("hidden");
+        selected_message.querySelector(".edit_message_form").classList.add("hidden");
     }
 
     function updateMessage(event){
         event.preventDefault(event);
-        let new_message = selected_message_id.querySelector(".edit_message_input").value;
-        selected_message_id.querySelector(".message_text").classList.remove("hidden");
-        selected_message_id.querySelector(".message_control_list").classList.remove("hidden");
-        selected_message_id.querySelector(".edit_message_form").classList.add("hidden");
-        selected_message_id.querySelector(".message_text").textContent = new_message;
+        let new_message = selected_message.querySelector(".edit_message_input").value;
+        selected_message.querySelector(".message_text").classList.remove("hidden");
+        selected_message.querySelector(".message_control_list").classList.remove("hidden");
+        selected_message.querySelector(".edit_message_form").classList.add("hidden");
+        selected_message.querySelector(".message_text").textContent = new_message;
     }
 
     function openDeleteMessageModal(){
         delete_message_modal.classList.remove("hidden");
-        delete_message_modal.querySelector("#delete_message_id").value = current_message_id;
+        delete_message_modal.querySelector("#delete_message_id").value = data_message_id;
     }
 
     function deleteMessage(event){
         event.preventDefault(event);
-        let current_message_id = delete_message_modal.querySelector("#delete_message_id").value;
-        document.getElementById("message_inbox").querySelector("#"+current_message_id).remove();
+        let data_message_id = delete_message_modal.querySelector("#delete_message_id").value;
+        document.querySelector('li[data-message-id="'+data_message_id+'"').remove();
         delete_message_modal.classList.add("hidden");
         countMessageLength();
     }
 
     function openCommentBox(){
-        selected_message_id.querySelector(".comment_form").classList.toggle("hidden");
-        countCommentLength(current_message_id);
+        selected_message.querySelector(".comment_form").classList.toggle("hidden");
+        countCommentLength(data_message_id);
     }
 
     function checkCommentInput(){
         let comment = comment_input.value.trim();
-        let post_comment = selected_message_id.querySelector("#post_comment");
+        let post_comment = selected_message.querySelector("#post_comment");
         if(comment == ""){
             post_comment.classList.add("disabled");
         }
@@ -139,20 +139,19 @@ function postMessage(event){
         event.preventDefault(event);
         let comment_input = message_clone.querySelector(".comment_input");
         let comment_clone = document.getElementById("hidden_clone").querySelector(".comment").cloneNode(true);
-        let comment_length = selected_message_id.getElementsByClassName("comment").length;
-        let comment_inbox = selected_message_id.querySelector("#comment_inbox");
-        let comment_id = "comment_"+comment_length;
-        let post_comment = selected_message_id.querySelector("#post_comment");
-        comment_clone.setAttribute("id", comment_id);
+        let comment_length = selected_message.getElementsByClassName("comment").length;
+        let comment_inbox = selected_message.querySelector("#comment_inbox");
+        let post_comment = selected_message.querySelector("#post_comment");
+        comment_clone.setAttribute("data-comment-id", comment_length);
         comment_clone.querySelector(".comment_text").textContent = comment_input.value;
         comment_inbox.prepend(comment_clone);
         comment_input.value = "";
         post_comment.classList.add("disabled");
-        countCommentLength(current_message_id);
+        countCommentLength(data_message_id);
 
         let edit_comment_button = message_clone.querySelector(".comment_edit");
-        let current_comment_id = edit_comment_button.closest(".comment").getAttribute("id");
-        let selected_comment_id = document.getElementById(current_comment_id);
+        let data_comment_id = edit_comment_button.closest(".comment").getAttribute("data-comment-id");
+        let selected_comment = document.querySelector('li[data-comment-id="'+data_comment_id+'"]');
 
         /** Open edit comment form */
         edit_comment_button.addEventListener("click", openEditCommentBox);
@@ -170,49 +169,49 @@ function postMessage(event){
         delete_comment_modal.querySelector("#remove_comment").addEventListener("click", deleteComment);
 
         function openEditCommentBox(){
-            let comment = selected_comment_id.querySelector(".comment_text").textContent;
-            selected_comment_id.querySelector(".edit_comment_form").classList.remove("hidden");
-            selected_comment_id.querySelector(".comment_text").classList.add("hidden");
-            selected_comment_id.querySelector(".comment_control_list").classList.add("hidden");
-            selected_comment_id.querySelector(".edit_comment_input").value = comment;
+            let comment = selected_comment.querySelector(".comment_text").textContent;
+            selected_comment.querySelector(".edit_comment_form").classList.remove("hidden");
+            selected_comment.querySelector(".comment_text").classList.add("hidden");
+            selected_comment.querySelector(".comment_control_list").classList.add("hidden");
+            selected_comment.querySelector(".edit_comment_input").value = comment;
         }
 
         function closeEditCommentBox(){
-            selected_comment_id.querySelector(".edit_comment_form").classList.add("hidden");
-            selected_comment_id.querySelector(".comment_text").classList.remove("hidden");
-            selected_comment_id.querySelector(".comment_control_list").classList.remove("hidden");
+            selected_comment.querySelector(".edit_comment_form").classList.add("hidden");
+            selected_comment.querySelector(".comment_text").classList.remove("hidden");
+            selected_comment.querySelector(".comment_control_list").classList.remove("hidden");
         }
 
         function updateComment(event){
             event.preventDefault(event);
-            let new_comment = selected_comment_id.querySelector(".edit_comment_input").value;
-            selected_message_id.querySelector(".comment_form").classList.remove("hidden");
-            selected_comment_id.querySelector(".edit_comment_form").classList.add("hidden");
-            selected_comment_id.querySelector(".comment_text").classList.remove("hidden");
-            selected_comment_id.querySelector(".comment_control_list").classList.remove("hidden");
-            selected_comment_id.querySelector(".comment_text").textContent = new_comment;
+            let new_comment = selected_comment.querySelector(".edit_comment_input").value;
+            selected_message.querySelector(".comment_form").classList.remove("hidden");
+            selected_comment.querySelector(".edit_comment_form").classList.add("hidden");
+            selected_comment.querySelector(".comment_text").classList.remove("hidden");
+            selected_comment.querySelector(".comment_control_list").classList.remove("hidden");
+            selected_comment.querySelector(".comment_text").textContent = new_comment;
         }
         
         function openDeleteCommentBox(){
             delete_comment_modal.classList.remove("hidden");
-            delete_comment_modal.querySelector("#comment_message_id").value = current_message_id;
-            delete_comment_modal.querySelector("#delete_comment_id").value = current_comment_id;
+            delete_comment_modal.querySelector("#comment_message_id").value = data_message_id;
+            delete_comment_modal.querySelector("#delete_comment_id").value = data_comment_id;
         }
 
         function deleteComment(event){
             event.preventDefault(event);
-            let current_message_id = delete_comment_modal.querySelector("#comment_message_id").value;
-            let current_comment_id = delete_comment_modal.querySelector("#delete_comment_id").value;
-            let selected_comment_id = document.getElementById(current_message_id).querySelector("#"+current_comment_id);
-            selected_comment_id.remove();
+            let data_message_id = delete_comment_modal.querySelector("#comment_message_id").value;
+            let data_comment_id = delete_comment_modal.querySelector("#delete_comment_id").value;
+            let selected_comment = document.querySelector('li[data-message-id="'+data_message_id+'"]').querySelector('li[data-comment-id="'+data_comment_id+'"]');
+            selected_comment.remove();
             delete_comment_modal.classList.add("hidden");
-            countCommentLength(current_message_id);
+            countCommentLength(data_message_id);
         };
     }
 
     /** Count comment/s */
-    function countCommentLength(current_message_id){
-        let comment_message_id = document.getElementById(current_message_id);
+    function countCommentLength(data_message_id){
+        let comment_message_id = document.querySelector('li[data-message-id="'+data_message_id+'"]');
         let comment_button = comment_message_id.querySelector(".message_comment");
         let message_comment_length = comment_message_id.querySelector(".message_comment span");
         let comment_length = comment_message_id.getElementsByClassName("comment").length;

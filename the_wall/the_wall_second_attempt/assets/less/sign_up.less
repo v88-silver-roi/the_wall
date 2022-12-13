@@ -4,7 +4,6 @@ body{
     margin: 0px auto;
 
     main{
-
         display: flex;
 
         section{
@@ -16,8 +15,8 @@ body{
             div{
                 background: @color_white;
                 border-radius: 6px;
-                box-sizing: border-box;
                 box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+                box-sizing: border-box;
                 margin: 0px auto;
                 padding: 31px 40px 35px 40px;
                 width: 450px;
@@ -27,11 +26,25 @@ body{
                     font: 600 22px/33px Poppins-SemiBold;
                     margin: 0px 0px 39px 0px;
                 }
+
+                @media only screen and (max-width: 480px){
+                    h3{
+                        font: 600 16px/24px Poppins-SemiBold;
+                        margin: 0px 0px 10px 0px;                    
+                    }
+                }
     
                 h1{
                     color: @color_dark_blue;
                     font: 600 40px/60px Poppins-SemiBold;
                     margin: 0px 0px 18px 0px;
+                }
+
+                @media only screen and (max-width: 480px){
+                    h1{
+                        font: 600 22px/33px Poppins-SemiBold;
+                        margin: 0px 0px 10px 0px;                    
+                    }
                 }
     
                 form{
@@ -41,6 +54,12 @@ body{
                         display: block;
                         font: 300 16px/24px Poppins-Light;
                         margin: 28px 0px 7px 0px;
+                    }
+
+                    @media only screen and (max-width: 480px){
+                        label{
+                            font: 300 14px/21px Poppins-Light;
+                        }
                     }
     
                     label[for="email"]{
@@ -59,6 +78,15 @@ body{
                         padding: 17px 10px;
                         width: 370px;
                     }
+
+                    @media only screen and (max-width: 480px){
+                        input{
+                            font: 400 14px/21px Poppins;
+                            margin: 0px;
+                            padding: 12px 5px;
+                            width: 290px;
+                        }
+                    }
     
                     p{
                         color: @color_dark_blue;
@@ -72,6 +100,13 @@ body{
                             text-decoration: none;
                         }
                     }
+
+                    @media only screen and (max-width: 480px){
+                        p{
+                            font: 300 14px/21px Poppins-Light;
+                            margin: 23px 0px 0px 0px;
+                        }
+                    }
     
                     .error{
                         color: @color_red;
@@ -79,6 +114,12 @@ body{
                         font: 300 14px/31px Poppins-Light;
                         margin: 0px;
                         text-align: left;
+                    }
+
+                    @media only screen and (max-width: 480px){
+                        .error{
+                            font: 300 12px/21px Poppins-Light;
+                        }
                     }
     
                     button{
@@ -92,6 +133,14 @@ body{
                         margin: 34px auto 35px auto;
                         padding: 15px 46px 15px 45px;
                     }
+
+                    @media only screen and (max-width: 480px){
+                        button{
+                            font: 600 14px/21px Poppins-SemiBold;
+                            margin: 20px auto 17px auto;
+                            padding: 7px 23px 7px 22px;
+                        }
+                    }
                 }
     
                 p{
@@ -103,6 +152,30 @@ body{
                         text-decoration: none;
                     }
                 }
+
+                @media only screen and (max-width: 480px){
+                    p{
+                        font: 400 14px/21px Poppins;
+                    }
+                }
+            }
+            
+            @media only screen and (max-width: 480px){
+                div{
+                    padding: 21px 30px 25px 30px;                
+                    width: 350px;
+                }
+            }
+        }
+
+        @media only screen and (max-width: 480px){
+            section{
+                align-items: center;
+                background-color: rgba(44, 107, 255, 0.51);
+                display: flex;
+                height: 100vh;
+                justify-content: center;
+                padding: 0px;
             }
         }
     
@@ -115,6 +188,18 @@ body{
                 margin: 335.2px 0px 0px -67px;
                 z-index: 1; 
             }
+
+            @media only screen and (max-width: 480px){
+                img{
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 480px){
+        main{
+            display: block !important;
         }
     }
 }

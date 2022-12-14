@@ -108,13 +108,14 @@ function postMessage(event){
 
     function openDeleteMessageModal(){
         delete_message_modal.classList.remove("hidden");
-        delete_message_modal.querySelector("#delete_message_id").value = data_message_id;
+        delete_message_modal.querySelector('[name="delete_message_id"]').value = data_message_id;
     }
 
     function deleteMessage(event){
         event.preventDefault(event);
-        let data_message_id = delete_message_modal.querySelector("#delete_message_id").value;
-        document.querySelector('li[data-message-id="'+data_message_id+'"').remove();
+        let data_message_id = delete_message_modal.querySelector('[name="delete_message_id"]').value;
+        let selected_message = document.querySelector('li[data-message-id="'+data_message_id+'"');
+        selected_message.parentNode.removeChild(selected_message);
         delete_message_modal.classList.add("hidden");
         countMessageLength();
     }
@@ -140,7 +141,8 @@ function postMessage(event){
         event.preventDefault(event);
         let comment_clone = document.getElementById("hidden_clone").querySelector(".comment").cloneNode(true);
         let comment_length = selected_message.getElementsByClassName("comment").length;
-        comment_clone.setAttribute("data-comment-id", comment_length);
+        let selected_message_id = selected_message.getAttribute('data-message-id');
+        comment_clone.setAttribute("data-comment-id", selected_message_id+"_"+comment_length);
         comment_clone.querySelector(".comment_text").textContent = comment_input.value;
         selected_message.querySelector("#comment_inbox").prepend(comment_clone);
         comment_input.value = "";
@@ -193,32 +195,35 @@ function postMessage(event){
         
         function openDeleteCommentBox(){
             delete_comment_modal.classList.remove("hidden");
-            delete_comment_modal.querySelector("#comment_message_id").value = data_message_id;
-            delete_comment_modal.querySelector("#delete_comment_id").value = data_comment_id;
+            delete_comment_modal.querySelector('[name="delete_comment_id"]').value = data_comment_id;
         }
 
         function deleteComment(event){
             event.preventDefault(event);
-            let data_message_id = delete_comment_modal.querySelector("#comment_message_id").value;
-            let data_comment_id = delete_comment_modal.querySelector("#delete_comment_id").value;
-            document.querySelector('li[data-message-id="'+data_message_id+'"]').querySelector('li[data-comment-id="'+data_comment_id+'"]').remove();
+            let data_comment_id = delete_comment_modal.querySelector('[name="delete_comment_id"]').value;
+            let data_message_id = data_comment_id.split('_')[0];
+            let selected_comment = document.querySelector('li[data-comment-id="'+data_comment_id+'"]');
+            selected_comment.parentNode.removeChild(selected_comment);
             delete_comment_modal.classList.add("hidden");
             countCommentLength(data_message_id);
         };
     }
+}
 
-    /** Count comment/s */
-    function countCommentLength(data_message_id){
-        let comment_message_id = document.querySelector('li[data-message-id="'+data_message_id+'"]');
-        let comment_button = comment_message_id.querySelector(".message_comment");
-        let comment_length = comment_message_id.getElementsByClassName("comment").length;
-        comment_message_id.querySelector(".message_comment span").innerHTML = comment_length;
-        if((comment_length) == 0){    
-            comment_button.classList.remove("font_color_blue");
-        }
-        else{
-            comment_button.classList.add("font_color_blue");
-        }
+/** Count comment/s */
+function countCommentLength(data_message_id){
+    let comment_message_id = document.querySelector('li[data-message-id="'+data_message_id+'"]');
+    let comment_image = comment_message_id.querySelector(".message_comment img");
+    let comment_text = comment_message_id.querySelector(".message_comment span");
+    let comment_length = comment_message_id.getElementsByClassName("comment").length;
+    comment_message_id.querySelector(".message_comment span .comment_length").innerHTML = comment_length;
+    if((comment_length) == 0){  
+        comment_image.setAttribute("src","../assets/images/messages-bubble-square-text.png");  
+        comment_text.classList.remove("font_color_blue");
+    }
+    else{
+        comment_image.setAttribute("src","../assets/images/messages-bubble-square-text-blue.png"); 
+        comment_text.classList.add("font_color_blue");
     }
 }
 

@@ -40,6 +40,7 @@ body header {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
 }
 body header nav {
+  align-items: center;
   display: flex;
   justify-content: space-between;
   margin: 0px auto;
@@ -85,7 +86,7 @@ body header nav h5 a {
   }
 }
 body section {
-  margin: 50px 80px 50px 79px;
+  margin: 50px 80px;
 }
 body section #wall_container {
   background: #ffffff;
@@ -95,7 +96,7 @@ body section #wall_container {
   margin: 0px auto;
   max-width: 1440px;
   min-height: 1035px;
-  padding: 70px 71px 70px 68px;
+  padding: 70px;
 }
 body section #wall_container #wall_header {
   align-items: flex-start;
@@ -119,6 +120,7 @@ body section #wall_container #wall_header h5 span {
 @media only screen and (max-width: 480px) {
   body section #wall_container #wall_header h5 {
     font: 400 14px/21px Poppins;
+    width: 170px;
   }
 }
 body section #wall_container #wall_header button {
@@ -149,10 +151,26 @@ body section #wall_container #no_message {
   margin-top: 126px;
   text-align: center;
 }
+@media only screen and (max-width: 480px) {
+  body section #wall_container #no_message img {
+    width: 25px;
+  }
+}
 body section #wall_container #no_message p {
   color: #707070;
   font: 400 16px/24px Poppins;
   margin: 20px 0px 0px 0px;
+}
+@media only screen and (max-width: 480px) {
+  body section #wall_container #no_message p {
+    font: 400 14px/21px Poppins;
+    margin: 10px 0px 0px 0px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  body section #wall_container #no_message {
+    margin-top: 63px;
+  }
 }
 body section #wall_container #message_inbox {
   margin: 0px;
@@ -165,12 +183,17 @@ body section #wall_container #message_inbox .message {
   box-sizing: border-box;
   list-style: none;
   margin: 0px 0px 20px 0px;
-  padding: 24px 30px 28px 26.32px;
+  padding: 24px 30px 28px 25.32px;
 }
 body section #wall_container #message_inbox .message .message_text {
   color: #152c61;
   font: 300 16px/24px Poppins-Light;
   margin: 0px 0px 20px 0px;
+}
+@media only screen and (max-width: 480px) {
+  body section #wall_container #message_inbox .message .message_text {
+    font: 300 14px/21px Poppins-Light;
+  }
 }
 body section #wall_container #message_inbox .message .message_control_list {
   align-items: center;
@@ -181,27 +204,64 @@ body section #wall_container #message_inbox .message .message_control_list {
 body section #wall_container #message_inbox .message .message_control_list .message_element {
   align-items: center;
   display: flex;
+  font: 400 16px/24px Poppins;
   list-style: none;
-  margin: 0px 0px 0px 0px;
-}
-body section #wall_container #message_inbox .message .message_control_list .message_element img {
   margin: 0px;
 }
 body section #wall_container #message_inbox .message .message_control_list .message_element .message_comment {
-  color: #707070;
+  align-items: center;
+  background: none;
+  border: none;
   cursor: pointer;
+  display: flex;
+  font: 400 16px/24px Poppins;
+  padding: 0px;
+}
+body section #wall_container #message_inbox .message .message_control_list .message_element .message_comment .comment_text {
+  color: #707070;
   margin: 0px 24.68px 0px 5px;
 }
+@media only screen and (max-width: 480px) {
+  body section #wall_container #message_inbox .message .message_control_list .message_element .message_comment .comment_text {
+    margin: 0px;
+  }
+}
 body section #wall_container #message_inbox .message .message_control_list .message_element .message_edit {
-  color: #2c6bff;
+  align-items: center;
+  background: none;
+  border: none;
   cursor: pointer;
+  display: flex;
+  font: 400 16px/24px Poppins;
+  padding: 0px;
+}
+body section #wall_container #message_inbox .message .message_control_list .message_element .message_edit span {
+  color: #2c6bff;
   margin: 0px 28px 0px 4px;
 }
+@media only screen and (max-width: 480px) {
+  body section #wall_container #message_inbox .message .message_control_list .message_element .message_edit span {
+    margin: 0px;
+  }
+}
 body section #wall_container #message_inbox .message .message_control_list .message_element .message_delete {
-  color: #000000;
+  align-items: center;
+  background: none;
+  border: none;
   cursor: pointer;
+  display: flex;
+  font: 400 16px/24px Poppins;
+  padding: 0px;
+}
+body section #wall_container #message_inbox .message .message_control_list .message_element .message_delete span {
+  color: #000000;
   margin: 0px 27.32px 0px 5px;
   opacity: 0.6;
+}
+@media only screen and (max-width: 480px) {
+  body section #wall_container #message_inbox .message .message_control_list .message_element .message_delete span {
+    margin: 0px;
+  }
 }
 body section #wall_container #message_inbox .message .message_control_list .message_element .message_profile {
   color: #000000;
@@ -212,8 +272,31 @@ body section #wall_container #message_inbox .message .message_control_list .mess
 body section #wall_container #message_inbox .message .message_control_list .message_element .message_profile span {
   font: 500 16px/24px Poppins-Medium;
 }
+@media only screen and (max-width: 480px) {
+  body section #wall_container #message_inbox .message .message_control_list .message_element .message_profile span {
+    font: 500 12px/16px Poppins-Medium;
+  }
+}
+@media only screen and (max-width: 480px) {
+  body section #wall_container #message_inbox .message .message_control_list .message_element .message_profile {
+    margin: 0px;
+  }
+}
 body section #wall_container #message_inbox .message .message_control_list .message_element p {
   margin: 0px;
+}
+@media only screen and (max-width: 480px) {
+  body section #wall_container #message_inbox .message .message_control_list .message_element {
+    font: 400 12px/16px Poppins;
+  }
+}
+@media only screen and (max-width: 480px) {
+  body section #wall_container #message_inbox .message .message_control_list {
+    justify-content: space-between;
+  }
+}
+body section #wall_container #message_inbox .message .edit_message_form {
+  margin-bottom: 3px;
 }
 body section #wall_container #message_inbox .message .edit_message_form form {
   display: block;
@@ -226,17 +309,34 @@ body section #wall_container #message_inbox .message .edit_message_form form inp
   box-sizing: border-box;
   display: flex;
   font: 300 16px/24px Poppins-Light;
-  margin: 0px 0px 20px 0px;
+  margin: 7px 1px 20px 1px;
   padding: 16px 9px 26px 10px;
   width: 100%;
 }
-body section #wall_container #message_inbox .message .edit_message_form form a {
+@media only screen and (max-width: 480px) {
+  body section #wall_container #message_inbox .message .edit_message_form form input {
+    font: 300 14px/21px Poppins-Light;
+    margin: 0px 0px 15px 0px;
+    padding: 16px 9px 26px 10px;
+  }
+}
+body section #wall_container #message_inbox .message .edit_message_form form .cancel_edit_message {
+  background: none;
+  border: none;
   color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
   font: 400 16px/24px Poppins;
   margin-right: 30px;
+  padding: 0px;
   text-decoration: none;
 }
-body section #wall_container #message_inbox .message .edit_message_form form button {
+@media only screen and (max-width: 480px) {
+  body section #wall_container #message_inbox .message .edit_message_form form .cancel_edit_message {
+    font: 400 14px/21px Poppins;
+    margin: 0px 38px;
+  }
+}
+body section #wall_container #message_inbox .message .edit_message_form form .message_update {
   background: #2c6bff;
   border-radius: 4px;
   border-style: none;
@@ -248,12 +348,19 @@ body section #wall_container #message_inbox .message .edit_message_form form but
   text-align: center;
   width: 190px;
 }
+@media only screen and (max-width: 480px) {
+  body section #wall_container #message_inbox .message .edit_message_form form .message_update {
+    font: 400 14px/21px Poppins;
+    height: 38px;
+    width: 190px;
+  }
+}
 body section #wall_container #message_inbox .message .comment_form {
   background-color: #ffffff;
   border-radius: 6px;
   border: 1px solid #dce6ff;
-  margin-top: 26px;
-  padding: 30px 31px 20px 24px;
+  margin-top: 27px;
+  padding: 30px 30px 20px 30px;
 }
 body section #wall_container #message_inbox .message .comment_form form {
   display: block;
@@ -270,17 +377,37 @@ body section #wall_container #message_inbox .message .comment_form form input {
   padding: 16px 9px 26px 10px;
   width: 100%;
 }
+@media only screen and (max-width: 480px) {
+  body section #wall_container #message_inbox .message .comment_form form input {
+    font: 300 12px/16px Poppins-Light;
+    margin-bottom: 10px;
+    padding: 8px 4px 13px 15px;
+  }
+}
 body section #wall_container #message_inbox .message .comment_form form button {
   background: #2c6bff;
   border-radius: 4px;
   border-style: none;
   color: #ffffff;
   cursor: pointer;
-  font: 500 16px/24px Poppins-Medium;
+  font: 500 16px/14px Poppins-Medium;
   height: 38px;
   margin: 0px;
   text-align: center;
   width: 190px;
+}
+@media only screen and (max-width: 480px) {
+  body section #wall_container #message_inbox .message .comment_form form button {
+    font: 500 12px/16px Poppins-Medium;
+    height: 28px;
+    width: 120px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  body section #wall_container #message_inbox .message .comment_form {
+    margin-top: 13px;
+    padding: 20px;
+  }
 }
 body section #wall_container #message_inbox .message #comment_inbox {
   padding: 0px;
@@ -299,6 +426,12 @@ body section #wall_container #message_inbox .message #comment_inbox .comment .co
   font: 300 16px/24px Poppins-Light;
   margin: 0px 0px 20px 0px;
 }
+@media only screen and (max-width: 480px) {
+  body section #wall_container #message_inbox .message #comment_inbox .comment .comment_text {
+    font: 300 12px/14px Poppins-Light;
+    margin: 0px 0px 20px 0px;
+  }
+}
 body section #wall_container #message_inbox .message #comment_inbox .comment .comment_control_list {
   align-items: center;
   display: flex;
@@ -311,19 +444,42 @@ body section #wall_container #message_inbox .message #comment_inbox .comment .co
   list-style: none;
   margin: 0px;
 }
-body section #wall_container #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element img {
-  margin: 0px;
-}
 body section #wall_container #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element .comment_edit {
-  color: #2c6bff;
+  align-items: center;
+  background: none;
+  border: none;
   cursor: pointer;
+  display: flex;
+  font: 400 16px/24px Poppins;
+  padding: 0px;
+}
+body section #wall_container #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element .comment_edit span {
+  color: #2c6bff;
   margin: 0px 28px 0px 5px;
+}
+@media only screen and (max-width: 480px) {
+  body section #wall_container #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element .comment_edit span {
+    margin: 0px;
+  }
 }
 body section #wall_container #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element .comment_delete {
-  color: #000000;
+  align-items: center;
+  background: none;
+  border: none;
   cursor: pointer;
+  display: flex;
+  font: 400 16px/24px Poppins;
+  padding: 0px;
+}
+body section #wall_container #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element .comment_delete span {
+  color: #000000;
   margin: 0px 28px 0px 5px;
   opacity: 0.6;
+}
+@media only screen and (max-width: 480px) {
+  body section #wall_container #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element .comment_delete span {
+    margin: 0px;
+  }
 }
 body section #wall_container #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element .comment_profile {
   color: #000000;
@@ -334,8 +490,29 @@ body section #wall_container #message_inbox .message #comment_inbox .comment .co
 body section #wall_container #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element .comment_profile span {
   font: 500 16px/24px Poppins-Medium;
 }
+@media only screen and (max-width: 480px) {
+  body section #wall_container #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element .comment_profile span {
+    font: 500 14px/21px Poppins-Medium;
+  }
+}
+@media only screen and (max-width: 480px) {
+  body section #wall_container #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element .comment_profile {
+    margin: 0px;
+  }
+}
 body section #wall_container #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element p {
   margin: 0px;
+}
+@media only screen and (max-width: 480px) {
+  body section #wall_container #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element {
+    font: 400 12px/16px Poppins;
+  }
+}
+@media only screen and (max-width: 480px) {
+  body section #wall_container #message_inbox .message #comment_inbox .comment .comment_control_list {
+    font: 400 12px/16px Poppins;
+    justify-content: space-between;
+  }
 }
 body section #wall_container #message_inbox .message #comment_inbox .comment .edit_comment_form form {
   display: block;
@@ -352,13 +529,30 @@ body section #wall_container #message_inbox .message #comment_inbox .comment .ed
   padding: 16px 9px 26px 10px;
   width: 100%;
 }
-body section #wall_container #message_inbox .message #comment_inbox .comment .edit_comment_form form div a {
+@media only screen and (max-width: 480px) {
+  body section #wall_container #message_inbox .message #comment_inbox .comment .edit_comment_form form input {
+    font: 300 12px/14px Poppins-Light;
+    margin: 0px 0px 15px 0px;
+    padding: 16px 9px 26px 10px;
+  }
+}
+body section #wall_container #message_inbox .message #comment_inbox .comment .edit_comment_form form .cancel_edit_comment {
+  background: none;
+  border: none;
   color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
   font: 400 16px/24px Poppins;
   margin-right: 29px;
+  padding: 0px;
   text-decoration: none;
 }
-body section #wall_container #message_inbox .message #comment_inbox .comment .edit_comment_form form button {
+@media only screen and (max-width: 480px) {
+  body section #wall_container #message_inbox .message #comment_inbox .comment .edit_comment_form form .cancel_edit_comment {
+    font: 400 12px/16px Poppins;
+    margin: 0px 46px;
+  }
+}
+body section #wall_container #message_inbox .message #comment_inbox .comment .edit_comment_form form .update_comment {
   background: #2c6bff;
   border-radius: 4px;
   border-style: none;
@@ -369,11 +563,34 @@ body section #wall_container #message_inbox .message #comment_inbox .comment .ed
   margin: 0px;
   width: 190px;
 }
+@media only screen and (max-width: 480px) {
+  body section #wall_container #message_inbox .message #comment_inbox .comment .edit_comment_form form .update_comment {
+    font: 500 12px/16px Poppins-Medium;
+    height: 28px;
+    width: 140px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  body section #wall_container #message_inbox .message #comment_inbox .comment {
+    padding: 20px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  body section #wall_container #message_inbox .message {
+    margin: 0px 0px 10px 0px;
+    padding: 20px;
+  }
+}
 body section #wall_container #message_inbox .message[data-message-id="1"] {
   margin: 0px;
 }
 body section #wall_container #message_inbox .message:first-child {
   margin-top: 30px !important;
+}
+@media only screen and (max-width: 480px) {
+  body section #wall_container #message_inbox .message:first-child {
+    margin-top: 20px !important;
+  }
 }
 @media only screen and (max-width: 480px) {
   body section #wall_container {
@@ -407,17 +624,32 @@ body #create_message_modal .modal_dialog .modal_content .modal_body {
   text-align: right;
   width: 937px;
 }
-body #create_message_modal .modal_dialog .modal_content .modal_body img {
+body #create_message_modal .modal_dialog .modal_content .modal_body #close_message_modal {
+  background: none;
+  border: none;
   cursor: pointer;
+  padding: 0px;
   position: absolute;
   right: 11.47px;
   top: 12px;
+}
+@media only screen and (max-width: 480px) {
+  body #create_message_modal .modal_dialog .modal_content .modal_body img {
+    display: none;
+  }
 }
 body #create_message_modal .modal_dialog .modal_content .modal_body h3 {
   color: #152c61;
   font: 500 26px/39px Poppins-Medium;
   margin: 0px 0px 40px 0px;
   text-align: center;
+}
+@media only screen and (max-width: 480px) {
+  body #create_message_modal .modal_dialog .modal_content .modal_body h3 {
+    font: 500 22px/33px Poppins-Medium;
+    margin: 0px 0px 40px 0px;
+    text-align: center;
+  }
 }
 body #create_message_modal .modal_dialog .modal_content .modal_body input {
   background-color: #f5f8ff;
@@ -431,13 +663,33 @@ body #create_message_modal .modal_dialog .modal_content .modal_body input {
   padding: 8px 7.37px 128px 13.93px;
   width: 835px;
 }
-body #create_message_modal .modal_dialog .modal_content .modal_body a {
+@media only screen and (max-width: 480px) {
+  body #create_message_modal .modal_dialog .modal_content .modal_body input {
+    font: 300 14px/21px Poppins-Light;
+    height: 185px;
+    margin: 0px 0px 31px 0px;
+    padding: 8px 7.37px 128px 13.93px;
+    width: 325px;
+  }
+}
+body #create_message_modal .modal_dialog .modal_content .modal_body #cancel_create_message_modal {
+  background: none;
+  border: none;
   color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
   font: 400 16px/24px Poppins;
-  margin-right: 29px;
+  margin-right: 24px;
+  padding: 0px;
   text-decoration: none;
 }
-body #create_message_modal .modal_dialog .modal_content .modal_body button {
+@media only screen and (max-width: 480px) {
+  body #create_message_modal .modal_dialog .modal_content .modal_body #cancel_create_message_modal {
+    font: 400 14px/21px Poppins;
+    margin: 0px 40px;
+    text-decoration: none;
+  }
+}
+body #create_message_modal .modal_dialog .modal_content .modal_body #post_message {
   background: #2c6bff;
   border-radius: 4px;
   border-style: none;
@@ -446,9 +698,131 @@ body #create_message_modal .modal_dialog .modal_content .modal_body button {
   font: 500 16px/24px Poppins-Medium;
   height: 38px;
   margin: 0px;
+  padding: 0px;
   width: 190px;
 }
-body #delete_message_modal,
+@media only screen and (max-width: 480px) {
+  body #create_message_modal .modal_dialog .modal_content .modal_body #post_message {
+    font: 500 14px/21px Poppins-Medium;
+    height: 38px;
+    margin: 0px;
+    width: 190px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  body #create_message_modal .modal_dialog .modal_content .modal_body {
+    height: 377px;
+    margin-top: 50px;
+    padding: 20px 26px 30px 36px;
+    width: 387px;
+  }
+}
+body #delete_message_modal {
+  background-color: rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+}
+body #delete_message_modal .modal_dialog .modal_content {
+  height: 307px;
+  width: 540px;
+}
+body #delete_message_modal .modal_dialog .modal_content .modal_body {
+  background-color: #ffffff;
+  border-radius: 6px;
+  margin: 50px auto 0px auto;
+  padding: 46px 75px 60px 77px;
+  position: relative;
+  text-align: right;
+}
+body #delete_message_modal .modal_dialog .modal_content .modal_body #cancel_delete_message {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0px;
+  position: absolute;
+  right: 11.47px;
+  top: 12px;
+}
+@media only screen and (max-width: 480px) {
+  body #delete_message_modal .modal_dialog .modal_content .modal_body img {
+    display: none;
+  }
+}
+body #delete_message_modal .modal_dialog .modal_content .modal_body h3 {
+  color: #152c61;
+  font: 500 26px/39px Poppins-Medium;
+  margin: 0px 0px 40px 0px;
+  text-align: center;
+}
+@media only screen and (max-width: 480px) {
+  body #delete_message_modal .modal_dialog .modal_content .modal_body h3 {
+    color: #152c61;
+    font: 500 24px/26px Poppins-Medium;
+    margin: 0px 0px 30px 0px;
+  }
+}
+body #delete_message_modal .modal_dialog .modal_content .modal_body p {
+  color: #152c61;
+  font: 400 16px/24px Poppins;
+  margin: 0px;
+  text-align: center;
+}
+@media only screen and (max-width: 480px) {
+  body #delete_message_modal .modal_dialog .modal_content .modal_body p {
+    font: 400 14px/21px Poppins;
+  }
+}
+body #delete_message_modal .modal_dialog .modal_content .modal_body #cancel_delete_message_modal {
+  background: none;
+  border: none;
+  color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  font: 400 16px/24px Poppins;
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
+@media only screen and (max-width: 480px) {
+  body #delete_message_modal .modal_dialog .modal_content .modal_body a {
+    font: 400 14px/21px Poppins;
+    margin: 0px 40px;
+  }
+}
+body #delete_message_modal .modal_dialog .modal_content .modal_body #remove_message {
+  background: #2c6bff;
+  border-radius: 6px;
+  border-style: none;
+  color: #ffffff;
+  cursor: pointer;
+  font: 500 16px/24px Poppins-Medium;
+  height: 46px;
+  margin: 34px 0px 0px 75px;
+  width: 210px;
+}
+@media only screen and (max-width: 480px) {
+  body #delete_message_modal .modal_dialog .modal_content .modal_body button {
+    font: 500 14px/21px Poppins;
+    height: 38px;
+    margin: 34px 0px 0px 0px;
+    width: 190px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  body #delete_message_modal .modal_dialog .modal_content .modal_body {
+    padding: 20px 26px 30px 36px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  body #delete_message_modal .modal_dialog .modal_content {
+    height: 307px;
+    width: 387px;
+  }
+}
 body #delete_comment_modal {
   background-color: rgba(0, 0, 0, 0.4);
   box-sizing: border-box;
@@ -459,12 +833,10 @@ body #delete_comment_modal {
   top: 0px;
   width: 100%;
 }
-body #delete_message_modal .modal_dialog .modal_content,
 body #delete_comment_modal .modal_dialog .modal_content {
   height: 307px;
   width: 540px;
 }
-body #delete_message_modal .modal_dialog .modal_content .modal_body,
 body #delete_comment_modal .modal_dialog .modal_content .modal_body {
   background-color: #ffffff;
   border-radius: 6px;
@@ -473,36 +845,61 @@ body #delete_comment_modal .modal_dialog .modal_content .modal_body {
   position: relative;
   text-align: right;
 }
-body #delete_message_modal .modal_dialog .modal_content .modal_body img,
-body #delete_comment_modal .modal_dialog .modal_content .modal_body img {
+body #delete_comment_modal .modal_dialog .modal_content .modal_body #cancel_delete_comment {
+  background: none;
+  border: none;
   cursor: pointer;
+  padding: 0px;
   position: absolute;
   right: 11.47px;
   top: 12px;
 }
-body #delete_message_modal .modal_dialog .modal_content .modal_body h3,
+@media only screen and (max-width: 480px) {
+  body #delete_comment_modal .modal_dialog .modal_content .modal_body img {
+    display: none;
+  }
+}
 body #delete_comment_modal .modal_dialog .modal_content .modal_body h3 {
   color: #152c61;
   font: 500 26px/39px Poppins-Medium;
   margin: 0px 0px 40px 0px;
   text-align: center;
 }
-body #delete_message_modal .modal_dialog .modal_content .modal_body p,
+@media only screen and (max-width: 480px) {
+  body #delete_comment_modal .modal_dialog .modal_content .modal_body h3 {
+    color: #152c61;
+    font: 500 24px/26px Poppins-Medium;
+    margin: 0px 0px 30px 0px;
+  }
+}
 body #delete_comment_modal .modal_dialog .modal_content .modal_body p {
   color: #152c61;
   font: 400 16px/24px Poppins;
   margin: 0px;
   text-align: center;
 }
-body #delete_message_modal .modal_dialog .modal_content .modal_body a,
-body #delete_comment_modal .modal_dialog .modal_content .modal_body a {
+@media only screen and (max-width: 480px) {
+  body #delete_comment_modal .modal_dialog .modal_content .modal_body p {
+    font: 400 14px/21px Poppins;
+  }
+}
+body #delete_comment_modal .modal_dialog .modal_content .modal_body #cancel_delete_comment_modal {
+  background: none;
+  border: none;
   color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
   font: 400 16px/24px Poppins;
   margin: 0px;
+  padding: 0px;
   text-decoration: none;
 }
-body #delete_message_modal .modal_dialog .modal_content .modal_body button,
-body #delete_comment_modal .modal_dialog .modal_content .modal_body button {
+@media only screen and (max-width: 480px) {
+  body #delete_comment_modal .modal_dialog .modal_content .modal_body #cancel_delete_comment_modal {
+    font: 400 14px/21px Poppins;
+    margin: 0px 40px;
+  }
+}
+body #delete_comment_modal .modal_dialog .modal_content .modal_body #remove_comment {
   background: #2c6bff;
   border-radius: 6px;
   border-style: none;
@@ -512,4 +909,23 @@ body #delete_comment_modal .modal_dialog .modal_content .modal_body button {
   height: 46px;
   margin: 34px 0px 0px 75px;
   width: 210px;
+}
+@media only screen and (max-width: 480px) {
+  body #delete_comment_modal .modal_dialog .modal_content .modal_body #remove_comment {
+    font: 500 14px/21px Poppins;
+    height: 38px;
+    margin: 34px 0px 0px 0px;
+    width: 190px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  body #delete_comment_modal .modal_dialog .modal_content .modal_body {
+    padding: 20px 26px 30px 36px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  body #delete_comment_modal .modal_dialog .modal_content {
+    height: 307px;
+    width: 387px;
+  }
 }

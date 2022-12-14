@@ -25,7 +25,7 @@
                 <button type="button" id="create_message_button">Create Message</button>
             </div>
             <div id="no_message">
-                <img src="../assets/images/no_message.png" alt="no_message_icon">
+                <img src="../assets/images/no_message.png" alt="no message icon">
                 <p>No Posted Message Yet.</p>
             </div>
             <ul id="message_inbox">
@@ -38,11 +38,13 @@
         <div class="modal_dialog">
             <div class="modal_content">
                 <div class="modal_body">
-                    <img src="../assets/images/cancel.png" alt="close icon" id="close_message_modal" class="close_modal">
+                    <button id="close_message_modal" class="close_modal">
+                        <img src="../assets/images/cancel.png" alt="close icon">
+                    </button>
                     <h3>Create a Message</h3>
                     <form action="#">
                         <input type="text" id="create_message_input" class="input" placeholder="Type your message here.">
-                        <a href="#" id="cancel_create_message_modal" class="close_modal">Cancel</a>
+                        <button type="button" id="cancel_create_message_modal" class="close_modal">Cancel</button>
                         <button type="submit" id="post_message" class="disabled">Post Message</button>
                     </form>
                 </div>
@@ -54,12 +56,14 @@
         <div class="modal_dialog">
             <div class="modal_content">
                 <div class="modal_body">
-                    <img src="../assets/images/cancel.png" alt="close icon" id="cancel_delete_message" class="close_modal">
+                    <button id="cancel_delete_message" class="close_modal">    
+                        <img src="../assets/images/cancel.png" alt="close icon">
+                    </button>
                     <h3>Confirm Delete Message</h3>
                     <form action="#">
-                        <input type="hidden" id="delete_message_id">
+                        <input type="hidden" name="delete_message_id">
                         <p>Are you sure you want to remove this message? This action cannot be undone.</p>
-                        <a href="#" id="cancel_delete_message_modal" class="close_modal">Cancel</a>
+                        <button type="button" id="cancel_delete_message_modal" class="close_modal">Cancel</button>
                         <button type="submit" id="remove_message">Yes, Remove it.</button>
                     </form>
                 </div>
@@ -71,14 +75,15 @@
         <div class="modal_dialog">
             <div class="modal_content">
                 <div class="modal_body">
-                    <img src="../assets/images/cancel.png" alt="close icon" id="cancel_delete_comment" class="close_modal">
+                    <button id="cancel_delete_comment" class="close_modal">
+                        <img src="../assets/images/cancel.png" alt="close icon">
+                    </button>
                     <h3>Confirm Delete Comment</h3>
                     <form action="#">
-                        <input type="hidden" id="comment_message_id">
-                        <input type="hidden" id="delete_comment_id">
+                        <input type="hidden" name="delete_comment_id">
                         <p>Are you sure you want to remove this comment?</p>
                         <p>This action cannot be undone.</p>
-                        <a href="#" id="cancel_delete_comment_modal" class="close_modal">Cancel</a>
+                        <button type="button" id="cancel_delete_comment_modal" class="close_modal">Cancel</button>
                         <button type="submit" id="remove_comment">Yes, Remove it.</button>
                     </form>
                 </div>
@@ -91,26 +96,31 @@
             <p class="message_text">Sample text.</p>
             <ul class="message_control_list">
                 <li class="message_element">
-                    <img id="comment_icon" src="../assets/images/messages-bubble-square-text.png" alt="message_icon">
-                    <p class="message_comment"><span>0</span> Comment</p>
+                    <button class="message_comment">
+                        <img id="comment_icon" src="../assets/images/messages-bubble-square-text.png" alt="message icon"><span class="comment_text"><span class="comment_length">0</span> Comment</span>
+                    </button>
                 </li>
                 <li class="message_element">
-                    <img src="../assets/images/pencil-write.png" alt="edit_icon">
-                    <p class="message_edit">Edit</p>
+                    <button class="message_edit">
+                        <img src="../assets/images/pencil-write.png" alt="edit icon">
+                        <span>Edit</span> 
+                    </button>
                 </li>
                 <li class="message_element">
-                    <img src="../assets/images/delete.png" alt="delete_icon">
-                    <p class="message_delete">Delete</p>
+                    <button class="message_delete">
+                        <img src="../assets/images/delete.png" alt="delete icon">
+                        <span>Delete</span>
+                    </button>
                 </li>
                 <li class="message_element">
-                    <img src="../assets/images/user_placeholder.png" alt="user_icon">
+                    <img src="../assets/images/user_placeholder.png" alt="user icon">
                     <p class="message_profile"><span>You</span> - Few seconds ago</p>
                 </li>
             </ul>
             <div class="edit_message_form hidden">
                 <form action="#">
                     <input type="text" class="input edit_message_input">
-                    <a href="#" class="cancel_edit_message">Cancel</a>
+                    <button type="button" class="cancel_edit_message">Cancel</button>
                     <button type="submit" class="message_update">Update Message</button>
                 </form> 
             </div>
@@ -129,25 +139,27 @@
             <p class="comment_text">Sample text.</p>
             <ul class="comment_control_list">
                 <li class="comment_element">
-                    <img src="../assets/images/pencil-write.png" alt="edit_icon">
-                    <p class="comment_edit">Edit</p>
+                    <button class="comment_edit">
+                        <img src="../assets/images/pencil-write.png" alt="edit icon">
+                        <span>Edit</span>
+                    </button>
                 </li>
                 <li class="comment_element">
-                    <img src="../assets/images/delete.png" alt="delete_icon">
-                    <p class="comment_delete">Delete</p>
+                    <button class="comment_delete">
+                        <img src="../assets/images/delete.png" alt="delete icon">
+                        <span>Delete</span>
+                    </button>
                 </li>
                 <li class="comment_element">
-                    <img src="../assets/images/user_placeholder.png" alt="user_icon">
+                    <img src="../assets/images/user_placeholder.png" alt="user icon">
                     <p class="comment_profile"><span>You</span> - Few seconds ago</p>
                 </li>
             </ul>
             <div class="edit_comment_form hidden">
                 <form action="#">
                     <input type="text" class="input edit_comment_input">
-                    <div>
-                        <a href="#" class="cancel_edit_comment">Cancel</a>
-                        <button type="submit" class="update_comment">Update Comment</button>
-                    </div>
+                    <button type="button" class="cancel_edit_comment">Cancel</button>
+                    <button type="submit" class="update_comment">Update Comment</button>
                 </form> 
             </div>
         </li>

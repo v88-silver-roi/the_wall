@@ -2,7 +2,6 @@ let create_message_modal = document.getElementById("create_message_modal");
 let post_message = document.getElementById("post_message");
 let no_message = document.getElementById("no_message");
 let delete_message_modal = document.getElementById("delete_message_modal");
-let message_length = document.getElementsByClassName("message").length;
 let delete_comment_modal = document.getElementById("delete_comment_modal");
 let message_input = create_message_modal.querySelector("#create_message_input");
 let close_modal = document.querySelectorAll(".close_modal");
@@ -46,8 +45,8 @@ function postMessage(event){
     event.preventDefault(event);
     let message_clone = document.getElementById("hidden_clone").querySelector(".message").cloneNode(true);
     let message_length = document.getElementsByClassName("message").length;
-    let add_comment_button = message_clone.querySelector(".message_comment");
     let comment_input = message_clone.querySelector("#create_comment_input");
+    let post_comment = message_clone.querySelector("#post_comment");
     message_clone.setAttribute("data-message-id", message_length);
     message_clone.querySelector(".message_text").textContent = message_input.value;
     no_message.classList.add("hidden");
@@ -76,7 +75,7 @@ function postMessage(event){
     delete_message_modal.querySelector("#remove_message").addEventListener("click", deleteMessage);
 
     /** Show comment form */
-    add_comment_button.addEventListener("click", openCommentBox);   
+    message_clone.querySelector(".message_comment").addEventListener("click", openCommentBox);   
     
     /** Check if comment input is empty */
     comment_input.addEventListener("input", checkCommentInput);
@@ -129,7 +128,6 @@ function postMessage(event){
 
     function checkCommentInput(){
         let comment = comment_input.value.trim();
-        let post_comment = selected_message.querySelector("#post_comment");
         if(comment == ""){
             post_comment.classList.add("disabled");
         }
@@ -140,14 +138,11 @@ function postMessage(event){
 
     function postComment(event){
         event.preventDefault(event);
-        let comment_input = message_clone.querySelector(".comment_input");
         let comment_clone = document.getElementById("hidden_clone").querySelector(".comment").cloneNode(true);
         let comment_length = selected_message.getElementsByClassName("comment").length;
-        let comment_inbox = selected_message.querySelector("#comment_inbox");
-        let post_comment = selected_message.querySelector("#post_comment");
         comment_clone.setAttribute("data-comment-id", comment_length);
         comment_clone.querySelector(".comment_text").textContent = comment_input.value;
-        comment_inbox.prepend(comment_clone);
+        selected_message.querySelector("#comment_inbox").prepend(comment_clone);
         comment_input.value = "";
         post_comment.classList.add("disabled");
         countCommentLength(data_message_id);
@@ -206,8 +201,7 @@ function postMessage(event){
             event.preventDefault(event);
             let data_message_id = delete_comment_modal.querySelector("#comment_message_id").value;
             let data_comment_id = delete_comment_modal.querySelector("#delete_comment_id").value;
-            let selected_comment = document.querySelector('li[data-message-id="'+data_message_id+'"]').querySelector('li[data-comment-id="'+data_comment_id+'"]');
-            selected_comment.remove();
+            document.querySelector('li[data-message-id="'+data_message_id+'"]').querySelector('li[data-comment-id="'+data_comment_id+'"]').remove();
             delete_comment_modal.classList.add("hidden");
             countCommentLength(data_message_id);
         };
@@ -217,9 +211,8 @@ function postMessage(event){
     function countCommentLength(data_message_id){
         let comment_message_id = document.querySelector('li[data-message-id="'+data_message_id+'"]');
         let comment_button = comment_message_id.querySelector(".message_comment");
-        let message_comment_length = comment_message_id.querySelector(".message_comment span");
         let comment_length = comment_message_id.getElementsByClassName("comment").length;
-        message_comment_length.innerHTML = comment_length;
+        comment_message_id.querySelector(".message_comment span").innerHTML = comment_length;
         if((comment_length) == 0){    
             comment_button.classList.remove("font_color_blue");
         }

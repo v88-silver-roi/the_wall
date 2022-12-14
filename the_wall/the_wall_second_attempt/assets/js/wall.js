@@ -14,6 +14,7 @@ close_modal.forEach(close_modal => {
     function closeModal(event){
         event.target.closest(".modal").classList.add("hidden");
         message_input.value = "";
+        checkMessageInput();
     }
 });
 
@@ -122,6 +123,8 @@ function postMessage(event){
     function openCommentBox(){
         selected_message.querySelector(".comment_form").classList.toggle("hidden");
         countCommentLength(data_message_id);
+        message_clone.querySelector("#create_comment_input").value = "";
+        checkCommentInput();
     }
 
     function checkCommentInput(){
@@ -148,6 +151,7 @@ function postMessage(event){
         comment_input.value = "";
         post_comment.classList.add("disabled");
         countCommentLength(data_message_id);
+        checkCommentInput();
 
         let edit_comment_button = message_clone.querySelector(".comment_edit");
         let data_comment_id = edit_comment_button.closest(".comment").getAttribute("data-comment-id");

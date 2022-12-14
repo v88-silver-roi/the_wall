@@ -1,11 +1,8 @@
-let sign_up_form = document.getElementById("sign_up_form");
-
 /** Submit Signup Form */
-sign_up_form.addEventListener("submit", submitSignUpForm);
+document.getElementById("sign_up_form").addEventListener("submit", submitSignUpForm);
 
 function submitSignUpForm(event){
     event.preventDefault(event);
-    let input = document.querySelector(".input");
     let email = document.getElementById("email");
     let password = document.getElementById("password");
     let confirm_password = document.getElementById("confirm_password");
@@ -17,12 +14,13 @@ function submitSignUpForm(event){
     email_error.classList.add("hidden");
     password_error.classList.add("hidden");
     confirm_password_error.classList.add("hidden");
+    empty_input_error.classList.add("hidden");
 
     var emailValidRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     var passwordValidRegex=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
 
     /** Check if inputs are not empty */
-    if(input.value != ""){
+    if(document.querySelector(".input").value != ""){
 
         /** Check if email is valid */
         if(email.value.match(emailValidRegex)){

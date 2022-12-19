@@ -60,7 +60,7 @@ body header nav h3 {
 body header nav h5 {
   color: #152c61;
   font: 300 16px/24px Poppins-Light;
-  margin: 0px;
+  margin: 0px 0px 0px 20px;
 }
 body header nav h5 a {
   color: #2c6bff;
@@ -68,9 +68,14 @@ body header nav h5 a {
   margin-left: 16px;
   text-decoration: none;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 380px) {
   body header nav h5 a {
     font: 600 14px/21px Poppins-SemiBold;
+  }
+}
+@media only screen and (max-width: 798px) {
+  body header nav h5 {
+    text-align: right;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -79,10 +84,28 @@ body header nav h5 a {
     text-align: right;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 387px) {
+  body header nav h5 {
+    margin: 20px 0px 0px 0px;
+    text-align: left;
+  }
+}
+@media only screen and (max-width: 1024px) {
   body header nav {
     align-items: center;
+    max-width: 769px;
     padding: 19px 34px 19px 28px;
+  }
+}
+@media only screen and (max-width: 798px) {
+  body header nav {
+    align-items: center;
+    max-width: 681px;
+  }
+}
+@media only screen and (max-width: 387px) {
+  body header nav {
+    display: block;
   }
 }
 body section {
@@ -117,6 +140,13 @@ body section #wall_container #wall_header h5 span {
     font: 600 14px/21px Poppins;
   }
 }
+@media only screen and (max-width: 628px) {
+  body section #wall_container #wall_header h5 {
+    font: 400 14px/21px Poppins;
+    height: 48px;
+    width: 170px;
+  }
+}
 @media only screen and (max-width: 480px) {
   body section #wall_container #wall_header h5 {
     font: 400 14px/21px Poppins;
@@ -131,9 +161,10 @@ body section #wall_container #wall_header button {
   cursor: pointer;
   font: 500 16px/24px Poppins-Medium;
   height: 38px;
+  margin-left: 20px;
   width: 190px;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   body section #wall_container #wall_header button {
     font: 400 14px/21px Poppins;
     height: 48px;
@@ -217,12 +248,23 @@ body section #wall_container #message_inbox .message .message_control_list .mess
   font: 400 16px/24px Poppins;
   padding: 0px;
 }
+@media only screen and (max-width: 678px) {
+  body section #wall_container #message_inbox .message .message_control_list .message_element .message_comment img {
+    display: none;
+  }
+}
 body section #wall_container #message_inbox .message .message_control_list .message_element .message_comment .comment_text {
   color: #707070;
   margin: 0px 24.68px 0px 5px;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 845px) {
   body section #wall_container #message_inbox .message .message_control_list .message_element .message_comment .comment_text {
+    font: 400 14px/21px Poppins;
+  }
+}
+@media only screen and (max-width: 576px) {
+  body section #wall_container #message_inbox .message .message_control_list .message_element .message_comment .comment_text {
+    font: 400 12px/16px Poppins;
     margin: 0px;
   }
 }
@@ -235,12 +277,23 @@ body section #wall_container #message_inbox .message .message_control_list .mess
   font: 400 16px/24px Poppins;
   padding: 0px;
 }
+@media only screen and (max-width: 678px) {
+  body section #wall_container #message_inbox .message .message_control_list .message_element .message_edit img {
+    display: none;
+  }
+}
 body section #wall_container #message_inbox .message .message_control_list .message_element .message_edit span {
   color: #2c6bff;
   margin: 0px 28px 0px 4px;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 845px) {
   body section #wall_container #message_inbox .message .message_control_list .message_element .message_edit span {
+    font: 400 14px/21px Poppins;
+  }
+}
+@media only screen and (max-width: 576px) {
+  body section #wall_container #message_inbox .message .message_control_list .message_element .message_edit span {
+    font: 400 12px/16px Poppins;
     margin: 0px;
   }
 }
@@ -253,14 +306,30 @@ body section #wall_container #message_inbox .message .message_control_list .mess
   font: 400 16px/24px Poppins;
   padding: 0px;
 }
+@media only screen and (max-width: 678px) {
+  body section #wall_container #message_inbox .message .message_control_list .message_element .message_delete img {
+    display: none;
+  }
+}
 body section #wall_container #message_inbox .message .message_control_list .message_element .message_delete span {
   color: #000000;
   margin: 0px 27.32px 0px 5px;
   opacity: 0.6;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 845px) {
   body section #wall_container #message_inbox .message .message_control_list .message_element .message_delete span {
+    font: 400 14px/21px Poppins;
+  }
+}
+@media only screen and (max-width: 576px) {
+  body section #wall_container #message_inbox .message .message_control_list .message_element .message_delete span {
+    font: 400 12px/16px Poppins;
     margin: 0px;
+  }
+}
+@media only screen and (max-width: 678px) {
+  body section #wall_container #message_inbox .message .message_control_list .message_element img {
+    display: none;
   }
 }
 body section #wall_container #message_inbox .message .message_control_list .message_element .message_profile {
@@ -272,9 +341,25 @@ body section #wall_container #message_inbox .message .message_control_list .mess
 body section #wall_container #message_inbox .message .message_control_list .message_element .message_profile span {
   font: 500 16px/24px Poppins-Medium;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 845px) {
+  body section #wall_container #message_inbox .message .message_control_list .message_element .message_profile span {
+    font: 500 14px/21px Poppins;
+    margin: 0px;
+  }
+}
+@media only screen and (max-width: 576px) {
   body section #wall_container #message_inbox .message .message_control_list .message_element .message_profile span {
     font: 500 12px/16px Poppins-Medium;
+  }
+}
+@media only screen and (max-width: 845px) {
+  body section #wall_container #message_inbox .message .message_control_list .message_element .message_profile {
+    font: 400 14px/21px Poppins;
+  }
+}
+@media only screen and (max-width: 576px) {
+  body section #wall_container #message_inbox .message .message_control_list .message_element .message_profile {
+    font: 400 12px/14px Poppins;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -285,12 +370,7 @@ body section #wall_container #message_inbox .message .message_control_list .mess
 body section #wall_container #message_inbox .message .message_control_list .message_element p {
   margin: 0px;
 }
-@media only screen and (max-width: 480px) {
-  body section #wall_container #message_inbox .message .message_control_list .message_element {
-    font: 400 12px/16px Poppins;
-  }
-}
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   body section #wall_container #message_inbox .message .message_control_list {
     justify-content: space-between;
   }
@@ -377,11 +457,16 @@ body section #wall_container #message_inbox .message .comment_form form input {
   padding: 16px 9px 26px 10px;
   width: 100%;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 845px) {
   body section #wall_container #message_inbox .message .comment_form form input {
-    font: 300 12px/16px Poppins-Light;
+    font: 300 14px/21px Poppins-Light;
     margin-bottom: 10px;
     padding: 8px 4px 13px 15px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  body section #wall_container #message_inbox .message .comment_form form input {
+    font: 300 12px/16px Poppins-Light;
   }
 }
 body section #wall_container #message_inbox .message .comment_form form button {
@@ -396,7 +481,13 @@ body section #wall_container #message_inbox .message .comment_form form button {
   text-align: center;
   width: 190px;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 845px) {
+  body section #wall_container #message_inbox .message .comment_form form button {
+    font: 500 14px/21px Poppins-Medium;
+    width: 150px;
+  }
+}
+@media only screen and (max-width: 576px) {
   body section #wall_container #message_inbox .message .comment_form form button {
     font: 500 12px/16px Poppins-Medium;
     height: 28px;
@@ -426,7 +517,7 @@ body section #wall_container #message_inbox .message #comment_inbox .comment .co
   font: 300 16px/24px Poppins-Light;
   margin: 0px 0px 20px 0px;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 845px) {
   body section #wall_container #message_inbox .message #comment_inbox .comment .comment_text {
     font: 300 12px/14px Poppins-Light;
     margin: 0px 0px 20px 0px;
@@ -453,12 +544,23 @@ body section #wall_container #message_inbox .message #comment_inbox .comment .co
   font: 400 16px/24px Poppins;
   padding: 0px;
 }
+@media only screen and (max-width: 678px) {
+  body section #wall_container #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element .comment_edit img {
+    display: none;
+  }
+}
 body section #wall_container #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element .comment_edit span {
   color: #2c6bff;
   margin: 0px 28px 0px 5px;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 845px) {
   body section #wall_container #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element .comment_edit span {
+    font: 400 14px/21px Poppins;
+  }
+}
+@media only screen and (max-width: 620px) {
+  body section #wall_container #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element .comment_edit span {
+    font: 400 12px/16px Poppins;
     margin: 0px;
   }
 }
@@ -471,14 +573,30 @@ body section #wall_container #message_inbox .message #comment_inbox .comment .co
   font: 400 16px/24px Poppins;
   padding: 0px;
 }
+@media only screen and (max-width: 678px) {
+  body section #wall_container #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element .comment_delete img {
+    display: none;
+  }
+}
 body section #wall_container #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element .comment_delete span {
   color: #000000;
   margin: 0px 28px 0px 5px;
   opacity: 0.6;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 845px) {
   body section #wall_container #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element .comment_delete span {
+    font: 400 14px/21px Poppins;
+  }
+}
+@media only screen and (max-width: 620px) {
+  body section #wall_container #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element .comment_delete span {
+    font: 400 12px/16px Poppins;
     margin: 0px;
+  }
+}
+@media only screen and (max-width: 678px) {
+  body section #wall_container #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element img {
+    display: none;
   }
 }
 body section #wall_container #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element .comment_profile {
@@ -490,26 +608,33 @@ body section #wall_container #message_inbox .message #comment_inbox .comment .co
 body section #wall_container #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element .comment_profile span {
   font: 500 16px/24px Poppins-Medium;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 845px) {
   body section #wall_container #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element .comment_profile span {
     font: 500 14px/21px Poppins-Medium;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 620px) {
+  body section #wall_container #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element .comment_profile span {
+    font: 500 12px/16px Poppins-Medium;
+  }
+}
+@media only screen and (max-width: 620px) {
   body section #wall_container #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element .comment_profile {
+    font: 400 12px/16px Poppins;
     margin: 0px;
   }
 }
 body section #wall_container #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element p {
   margin: 0px;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 620px) {
   body section #wall_container #message_inbox .message #comment_inbox .comment .comment_control_list .comment_element {
     font: 400 12px/16px Poppins;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 620px) {
   body section #wall_container #message_inbox .message #comment_inbox .comment .comment_control_list {
+    display: flex;
     font: 400 12px/16px Poppins;
     justify-content: space-between;
   }
@@ -592,11 +717,27 @@ body section #wall_container #message_inbox .message:first-child {
     margin-top: 20px !important;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 1024px) {
   body section #wall_container {
     margin: 0px auto;
-    max-width: 1440px;
+    max-width: 769px;
     padding: 30px;
+  }
+}
+@media only screen and (max-width: 798px) {
+  body section #wall_container {
+    max-width: 681px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  body section #wall_container {
+    margin: 0px auto;
+    padding: 30px;
+  }
+}
+@media only screen and (max-width: 798px) {
+  body section {
+    margin: 20px;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -644,7 +785,7 @@ body #create_message_modal .modal_dialog .modal_content .modal_body h3 {
   margin: 0px 0px 40px 0px;
   text-align: center;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 600px) {
   body #create_message_modal .modal_dialog .modal_content .modal_body h3 {
     font: 500 22px/33px Poppins-Medium;
     margin: 0px 0px 40px 0px;
@@ -663,13 +804,27 @@ body #create_message_modal .modal_dialog .modal_content .modal_body input {
   padding: 8px 7.37px 128px 13.93px;
   width: 835px;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 1024px) {
+  body #create_message_modal .modal_dialog .modal_content .modal_body input {
+    width: 475px;
+  }
+}
+@media only screen and (max-width: 600px) {
   body #create_message_modal .modal_dialog .modal_content .modal_body input {
     font: 300 14px/21px Poppins-Light;
     height: 185px;
     margin: 0px 0px 31px 0px;
     padding: 8px 7.37px 128px 13.93px;
     width: 325px;
+  }
+}
+@media only screen and (max-width: 430px) {
+  body #create_message_modal .modal_dialog .modal_content .modal_body input {
+    font: 300 14px/21px Poppins-Light;
+    height: 185px;
+    margin: 0px 0px 31px 0px;
+    padding: 8px 7.37px 128px 13.93px;
+    width: 275px;
   }
 }
 body #create_message_modal .modal_dialog .modal_content .modal_body #cancel_create_message_modal {
@@ -682,11 +837,16 @@ body #create_message_modal .modal_dialog .modal_content .modal_body #cancel_crea
   padding: 0px;
   text-decoration: none;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 600px) {
   body #create_message_modal .modal_dialog .modal_content .modal_body #cancel_create_message_modal {
     font: 400 14px/21px Poppins;
     margin: 0px 40px;
     text-decoration: none;
+  }
+}
+@media only screen and (max-width: 430px) {
+  body #create_message_modal .modal_dialog .modal_content .modal_body #cancel_create_message_modal {
+    margin: 0px 50px;
   }
 }
 body #create_message_modal .modal_dialog .modal_content .modal_body #post_message {
@@ -701,7 +861,7 @@ body #create_message_modal .modal_dialog .modal_content .modal_body #post_messag
   padding: 0px;
   width: 190px;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 600px) {
   body #create_message_modal .modal_dialog .modal_content .modal_body #post_message {
     font: 500 14px/21px Poppins-Medium;
     height: 38px;
@@ -709,12 +869,36 @@ body #create_message_modal .modal_dialog .modal_content .modal_body #post_messag
     width: 190px;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 430px) {
+  body #create_message_modal .modal_dialog .modal_content .modal_body #post_message {
+    font: 500 14px/21px Poppins-Medium;
+    height: 38px;
+    margin: 0px;
+    width: 120px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  body #create_message_modal .modal_dialog .modal_content .modal_body {
+    height: 377px;
+    margin-top: 50px;
+    padding: 20px 26px 30px 36px;
+    width: 537px;
+  }
+}
+@media only screen and (max-width: 600px) {
   body #create_message_modal .modal_dialog .modal_content .modal_body {
     height: 377px;
     margin-top: 50px;
     padding: 20px 26px 30px 36px;
     width: 387px;
+  }
+}
+@media only screen and (max-width: 430px) {
+  body #create_message_modal .modal_dialog .modal_content .modal_body {
+    height: 377px;
+    margin-top: 50px;
+    padding: 20px 26px 30px 36px;
+    width: 337px;
   }
 }
 body #delete_message_modal {
